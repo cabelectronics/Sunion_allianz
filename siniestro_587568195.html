@@ -1,0 +1,2060 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	            
+	
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<meta name="author" content="" >
+<meta name="keywords" content="" >
+<meta name="description" content="" >
+<meta name="copyright" content="" >
+<meta name="widgetsVersion" content="4.22.6" >
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="format-detection" content="telephone=no" >
+<title>Ficha Gestión</title>
+<script type="text/javascript" src="/drsi10/ruxitagentjs_ICA23Vfgqrtux_10205201116183137.js" data-dtconfig="uam=1|app=e095cb87c6c59526|agentId=cf0151b054c34f5f|rcdec=1209600000|featureHash=ICA23Vfgqrtux|vcv=2|rdnt=1|uxrgce=1|bp=2|srmcrv=10|cuc=06pu6mjw|mel=100000|dpvc=1|ssv=4|lastModification=1640268002182|dtVersion=10205201116183137|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/drsi10/ruxitagentjs_ICA23Vfgqrtux_10205201116183137.js|reportUrl=/drsi10/rb_bf87900dwe|rid=RID_494079566|rpid=1180056579|domain=e-pacallianz.com"></script><script type="text/javascript">
+$LANG='es';
+$CONTEXT='drsi10';
+$CONTEXT_LAST_DEPLOY='20211117000206';
+$DRWD00_LAST_DEPLOY='20211117000120';
+$LANGCOUNTRY='es_ES';
+$FONTSIZE='small';
+$CIACOD='ALZ';
+$CIACOUNTRY='es';
+$CIANCODCIA='2';
+$CIANAPO='1';$CIANALZ='2';$CIANCOL='3';$CIANBRA='4';$CIANFEN='7';$CIANAZP='8';$CIANAZV='9';
+$CIAPARTNER='';
+$SESSINTERVAL='1800';
+$STYLELINE='styleLine10';
+$DEVICEPLATFORMINFO='DESKTOP';
+$DEVICEPLATFORMTYPE='';
+ PAGEID='main$menu';
+</script>
+<script type="text/javascript" src="/drwd00/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/drwd00/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/drwd00/jquery/jquery.ajax.js"></script>
+<script type="text/javascript" src="/drwd00/alz2013/js/vendors/modernizr/extras/modernizr-custom.js"></script>
+<script type="text/javascript" src="/drwd00/js/class.lang.Basics.js?v=20211117000120"></script>
+<script type="text/javascript" src="/drwd00/js/config.widgets.js"></script>
+<link rel="stylesheet" href="/drwd00/jquery/css/jquery-ui.min.css" type="text/css">
+<link rel="stylesheet" href="/drwd00/css/autocomplete.style2010.jquery.ui.css" type="text/css">
+<link href="/drwd00/css/common/screen/small/gblPageFull.style2010.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">Import("widgets.Errors");</script>
+<script type="text/javascript">Import("controls.Mounts");</script>
+<script type="text/javascript">Import("dhtml.TreeMenu");</script>
+<script type="text/javascript">Import("/drwd00/js/class.controls.Section.js");</script>
+<script type="text/javascript">Import("widgets.Anchor");</script>
+<script type="text/javascript">Import("controls.Anchor");</script>
+<script type="text/javascript">Import("/drwd00/js/extendInfoTable.js");</script>
+<script type="text/javascript">Import("/drwd00/js/class.controls.Table.js");</script>
+<script type="text/javascript">Import("widgets.Page");</script>
+<script type="text/javascript">Import("/drwd00/js/orderTable.js");</script>
+<script type="text/javascript">Import("dhtml.MountsControl");</script>
+<script type="text/javascript">Import("dhtml.SectionButton");</script>
+<script type="text/javascript">Import("dhtml.FooterButton");</script>
+
+<script type="text/javascript" src="/drwd00/js/class.util.Lang.js"></script>
+<script type="text/javascript" src="/drwd00/json/lang_es-ES.js"></script>
+
+</head>
+<body>
+
+<script>
+ function mostrarAyuda(respuesta)
+ {
+    try{
+		if (respuesta != '')
+   	 {
+      		 var ret = eval("(" + respuesta + ")");
+   	     showProcessIcon("imgOptMenuBackHelp", false, 250)
+    		 if (ret.codError != '0' || ret.ayuda != 'true') {$('#imgOptMenuBackHelp').hide(); if ($('#tdHelpButton').length) {$('#tdHelpButton').hide();}
+       	 }
+   	 }
+ 	}catch(err){$('#imgOptMenuBackHelp').hide(); if ($('#tdHelpButton').length) {$('#tdHelpButton').hide();}
+   }
+ }
+ function criticalErrorDataAyudaAplicaciones() {$('#imgOptMenuBackHelp').hide(); if ($('#tdHelpButton').length) {$('#tdHelpButton').hide();}
+   showProcessIcon("imgOptMenuBackHelp", false, 250)
+ }
+ function showProcessIcon ( String, Boolean, int )
+ {
+   var sIDLabel  = arguments[0];
+   var bShowIcon = arguments[1];
+   var iTime     = arguments[2];
+   var sProcessIcon = "";
+   if ($("#" + sIDLabel).length) {
+     if (sIDLabel){
+       setTimeout( function() {
+         if (bShowIcon) {
+        $('#imgOptMenuBackHelp').css('background-image', 'url(/drwd00/img/icoNaviSGEnCursoComboFinder.gif)'); 
+         } else {
+            $('#imgOptMenuBackHelp').css('background-color', '#ffffff'); 
+            $('#imgOptMenuBackHelp').css('background-image', 'none'); 
+         }
+       }, iTime ); 
+     }
+   }
+ }
+$(document).ready(function(){
+ if (typeof PAGEID != 'undefined' && typeof $CIANCODCIA != 'undefined') {
+   showProcessIcon("imgOptMenuBackHelp", true, 50)
+   var datos = 'pageId='+ PAGEID + '&codCia=' + $CIANCODCIA;
+   AjaxRequest("/drsi10/AJAXServlet?resource=com.ats.sea.visuals.util.AyudaAplicacionesAjax",datos,mostrarAyuda,false,null,criticalErrorDataAyudaAplicaciones);
+ } else {
+   if ($('#imgOptMenuBackHelp').length) {$('#imgOptMenuBackHelp').hide(); if ($('#tdHelpButton').length) {$('#tdHelpButton').hide();}
+   }
+}
+});</script><script type="text/javascript">
+
+ErrorsBackup = new Array();
+function showErrors() {
+  if ((typeof(Errors)!="undefined") && (Errors!=null)) {
+    Errors.setTitle('Informe de aviso e incidencias');
+
+  }
+} /** end showErrors **/
+$(window).load(function() {showErrors();});</script>
+
+
+<!-- start : Code -->
+
+		<input type="hidden" name="action" value="">
+		<script type="text/javascript">
+		
+			var PAGEID='main$menuView';
+			var isWM = "false";
+			var widthScreen = $(window).width();
+			
+			
+			
+			function callAppFGAngular() {
+
+				var myForm = document.getElementById("IndexForm");
+				myForm.action= '/drsi10/SEAServlet?action=redirect&parametersMapKey=fichaAngularMap';
+				myForm.submit();
+			}
+			
+			$(document).ready(function(){
+
+				controlTablaWM();  //SFS-19440 use existing function, without duplicating code
+				
+			});
+		</script> 
+
+		<link rel='stylesheet' href='/drsi10/css/mobile.css' type='text/css' />
+	
+	
+	<!-- end : Code -->
+
+
+<!-- start : AppPage FullPage -->
+<div id="appPrincipal"  class="divPageArea"  data-mask="typeAppPage:fullMenu" > 
+<div id="divHeaderArea" class="divHeaderAreaFull" > 
+<table id="tblHeaderArea" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td id='cellUserPromptHeaderArea' class="cellUserPromptHeaderArea" >P0010218</td>
+<td class="cellTopLinkHeaderArea">
+<table id="tblTopLinkHeaderArea" border="0" cellspacing="0" cellpadding="0" align="right">
+<tr>
+<td id="optTopLinkLanguage" class="optTopLinkHeaderArea" onclick="Page.showPopupLanguage(this,'es_ES','pt_PT','es_CO','pt_BR');">&gt;&nbsp;Idioma (es [ES])</td>
+<td class="cellSeparatorTopLinkHeaderArea">&nbsp;</td>
+<td id="optTopLinkTextSize" class="optTopLinkHeaderArea" onclick="Page.showPopupTextSize(this,'Pequeña','Mediana','Grande');">&gt;&nbsp;Tamaño Letra (S)</td>
+<td class="cellSeparatorTopLinkHeaderArea">&nbsp;</td>
+<td id="lnkTopLink_Close" class="optTopLinkHeaderArea" onclick="if (confirm('¿Desea salir de la aplicación?')){window.location.replace('/drsi10/SEAServlet?action=logout');}">&gt;&nbsp;Cerrar</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" id='cellAppPromptHeaderArea' class="cellAppPromptHeaderArea" align="right">Ficha Gesti&oacute;n</td>
+</tr>
+<tr>
+<td colspan="2" class="cellAllNavigationAreaFull">
+<div id="divAllNavigationAreaFull" class="divAllNavigationAreaFull">
+
+<!-- start : Form -->
+<form  id="menuForm"  name="menuForm"  method="POST"  action="/drsi10/main/control.do"  >
+
+<!-- This section of code has been dinamically generated -->
+<input type="hidden" name="com.ats.webbeans.struts.thread" value="e1s1"/>
+<input type="hidden" name="com.ats.webbeans.struts.synch" value="2"/>
+<input type="hidden" name="formValidationID" value="0"/>
+<div class="divAppNaviHeaderAreaFull" id="divAppNaviHeaderAreaFull">
+<!-- start : menuApp -->
+<div id="divAppNaviHeaderFilledArea" class="divAppNaviHeaderFilledArea">
+<table id="tblAppNaviHeaderFilledArea" class="tblAppNaviHeaderFilledArea" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td id="cellOptionMenuAppNaviHeaderFilledArea" class="cellOptionMenuAppNaviHeaderFilledArea" colspan="2">
+<div  id="divNavigationArea"  class="divContentOptionMenu"  >
+<table cellspacing="0" cellpadding="0" id="tableOptMenu_" class="tableOptionMenu">
+<tr>
+<td id="menu1" title="AB ABOGADO" class="optionMenuUnselected"  onMouseOver="this.className='optionMenuSelected'" onMouseOut="this.className='optionMenuUnselected'"  >AB ABOGADO</td>
+</tr>
+</table>
+</div> <!-- divNavigationArea -->
+</td>  <!-- cellOptionMenuAppNaviHeaderFilledArea -->
+</tr>
+<tr>
+<td id="cellTopicPromptHeaderArea" class="cellTopicPromptHeaderArea" >
+&nbsp;</td>
+<td id="cellMenuIconsAppNaviHeaderFilledArea" class="cellMenuIconsAppNaviHeaderFilledArea">
+<table border="0" cellspacing="0" cellpadding="0"  id="optionMenuBack"  class="tableOptionMenuBack" >
+<tr>
+<td class="optionMenuBack">
+<img alt="Idioma" title="Idioma" src="/drwd00/img/icoTopFormGlobeFlag2010.gif" id="imgOptMenuBackLanguage" class="imgOptMenuBack" onClick="Page.showPopupLanguage(this,'es_ES','pt_PT','es_CO','pt_BR');"></td><td class="optionMenuBack">
+<img alt="Imprimir" title="Imprimir" src="/drwd00/img/icoTopFormImprimir2010.gif" id="imgOptMenuBackPrint"  class="imgOptMenuBack" onClick="Page.print();"></td>
+<td class="optionMenuBack" id="tdHelpButton">
+<img alt="Ayuda" title="Ayuda" src="/drwd00/img/icoTopFormAyuda2010.gif" id="imgOptMenuBackHelp"  class="imgOptMenuBack" onClick="Page.help();"></td>
+<td class="optionMenuBack">
+<img alt="Inicio" title="Inicio" src="/drwd00/img/icoTopFormHome2010.gif" id="imgOptMenuBackHome"  class="imgOptMenuBack" onClick="Page.start();" ></td>
+<td class="optionMenuBack">
+<img alt="Atrás" title="Atrás" src="/drwd00/img/icoTopFormVolver2010.gif"  id="imgOptMenuBackBack"  class="imgOptMenuBack" onclick="goBack();"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td id="cellSeparaMenuTopicTitleAppNaviHeaderFilledArea" class="cellSeparaMenuTopicTitleAppNaviHeaderFilledArea" colspan="2">
+&nbsp;</td>
+</tr>
+</table> <!-- end : tblAppNaviHeaderFilledArea -->
+</div> <!-- end : divAppNaviHeaderFilledArea -->
+<script language="javascript" type="text/javascript">
+function menuChg (menuHide, menuShow) {
+  presentMenu = menuShow;
+  document.getElementById(menuHide).style.display="none";
+  document.getElementById(menuShow).style.display="block";
+  backArrowCtrl();
+}
+</script>
+<script language="javascript" type="text/javascript">
+function parentLabel (label) {
+  var area = document.getElementById("cellTopicPromptHeaderArea");
+  if(area==null){
+    return;
+  }
+  area.innerHTML="&nbsp;" + label;
+}
+</script>
+<input type="hidden" name="menuSel" id="menuSel" value="">
+<script language="javascript" type="text/javascript">
+function goSelected (selection) {
+  document.getElementById("menuSel").value = selection;
+}
+</script>
+<script language="javascript" type="text/javascript">
+var presentMenu = "tableOptMenu_";
+var backPath = new Array();
+var backLabels = new Array();
+backArrowCtrl();
+parentLabel("&nbsp;");
+backLabels.push("&nbsp;");
+function goBack() {
+  var backMenu = backPath.pop();
+  var backLabel = backLabels.pop();
+  var oCellTopic = document.getElementById("cellTopicPromptHeaderArea");
+  var txtTopic = (oCellTopic.innerText ? oCellTopic.innerText : oCellTopic.textContent);
+  if (txtTopic.substr(1) == backLabel)
+    if (backLabels.length > 0)
+      backLabel = backLabels[backLabels.length-1];
+  menuChg(presentMenu, backMenu);
+  parentLabel(backLabel);
+}
+function backArrowCtrl() {
+  if (backPath.length == 0) {
+   document.getElementById("imgOptMenuBackBack").style.visibility="hidden";
+  } else {
+   document.getElementById("imgOptMenuBackBack").style.visibility="visible";
+  }
+}
+</script>
+<!-- end : menuApp -->
+
+</div> <!-- divAppNaviHeaderAreaFull -->
+
+<div id="divAppNaviLeftLateralAreaFull" class="divAppNaviLeftLateralAreaFull">
+<!-- start : menuLateralApp -->
+<div  id="menubar"  data-mask="mask:TreeMenu" class="divTreeMenu" >
+<span title="Indexación" onclick=" cargarHidden(this);callApp('INDEX')" id="menu11" >
+</span>
+<span title="Nota" onclick=" cargarHidden(this);callApp('NOTA')" id="menu11" >
+</span>
+</div>
+<script type="text/javascript" language="javascript">
+		function cargarHidden (oObject) {
+			document.getElementById('menuLatSel').value = oObject.id;
+			if (typeof(document.getElementById('nextLateralMenuSelected')) == "object")			document.getElementById('nextLateralMenuSelected').value=oObject.id;		}
+		function desplegarArbol(){
+		}
+</script>
+<input type="hidden" name="menuLatSel" id="menuLatSel" value="" />
+<script type="text/javascript" language="javascript">
+window.addEventListenerAllianz( "load", desplegarArbol, false );
+</script>
+<!-- end : menuLateralApp -->
+
+<!-- start : Code -->
+
+				<input type="hidden" name="com.ats.webbeans.struts.thread" value="e1s1"/>
+				<input type="hidden" name="com.ats.webbeans.struts.synch" value="0"/>
+				<input type="hidden" name="action" value="####">
+			<!-- end : Code -->
+</div> <!-- divAppNaviLeftLateralAreaFull -->
+</form>
+<!-- end : Form -->
+
+</div> <!-- divAllNavigationAreaFull -->
+</td>
+</tr>
+</table> <!-- end : tblHeaderArea -->
+<div id="divAllianzLogo" class="divAllianzLogo"><img src="/drwd00/img/oneLogo.png" width="179" height="74" border="0" alt="Allianz">
+</div> <!-- end : divAllianzLogo -->
+</div> <!-- end : divHeaderArea -->
+
+<div id="divContainerPagFull" class="divContainerPagFull">
+
+<!-- start : AppContent -->
+<div  id="divAppContent"  class="divAppContent-full"  >
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+
+<!-- start : Form -->
+<form  id="menuViewForm"  name="menuViewForm"  method="POST"  action="/drsi10/main/control.do"  >
+
+<!-- This section of code has been dinamically generated -->
+<input type="hidden" name="com.ats.webbeans.struts.thread" value="e1s1"/>
+<input type="hidden" name="com.ats.webbeans.struts.synch" value="3"/>
+<input type="hidden" name="formValidationID" value="1"/>
+<div id="divFormMainAppFullMenuArea" class="divFormMainAppFullMenuArea" >
+<div  id="sectionFormDeployed1"  class="divSectionArea"  >
+
+<!-- start : Section Vertical -->
+<div  id="DatosGenerales"  class="divSectionContentArea" >
+<!-- divSectionContentArea:DatosGenerales -->
+
+<table width="100%" cellpadding="0" cellspacing="0" class="tblSectionContentArea">
+<tr>
+<td style="vertical-align: top;" class="cellSectionHeaderArea">
+<table cellpadding="0" cellspacing="0"><tr  class="sectionTitleContent" >
+<td height="1px" align="right" style="text-align: right; cursor:pointer;"  class="sectionTitleContent" onclick="toggleContent('DatosGeneralesContent', 'DatosGeneralesImg', 'DatosGeneralesCellContent'); ; " ><img alt="" style="border: 0px black solid" id="DatosGeneralesImg" src="/drwd00/img/icoNaviNPSectionClosed2010.gif"/></td>
+<td style="padding-left:3px; cursor:pointer;" onclick="toggleContent('DatosGeneralesContent', 'DatosGeneralesImg', 'DatosGeneralesCellContent');  ;"  class="sectionTitleContent"  title="" >DATOS GENERALES</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="100%" height="100%" id="DatosGeneralesCellContent"  class="cellSectionContentArea" >
+<span style="display:none; visibility:hidden;">&nbsp;</span>
+<div id="DatosGeneralesContent"  class="divSectionContentBody"  style="display:block; visibility:visible;"  >
+
+<!-- start : Grid Layout -->
+<table  class="grid-layout"  cellpadding="0"  cellspacing="0" >
+<tr>
+<td colspan="1"  valign="top" align="left">
+<!-- start : InputText -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+<!-- start : Label -->
+<label  id="txtLabelRef_label"  for="txtLabelRef"  class="label-text" >Referencia</label>
+<!-- end : Label -->
+</td>
+<td>
+<input  id="txtLabelRef"  name="txtLabelRef"  type="text"  value="S -SINIESTRO"  class="input-disabled"  readonly="readonly"  style="width:180px" >
+
+</td>
+</tr>
+</table>
+<!-- end : InputText -->
+</td>
+<td colspan="1"  valign="top" align="left">
+<!-- start : InputText -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+<input  id="txtRef"  name="txtRef"  type="text"  value="587568195"  class="input-disabled"  readonly="readonly"  style="width:280px" >
+</td></tr>
+</table>
+<!-- end : InputText -->
+</td>
+</tr>
+</table>
+<!-- end : Grid Layout -->
+
+<!-- end : start widget code hidden render -->
+
+<!-- end : end widget code hidden render -->
+
+<!-- start : Grid Layout -->
+<table  class="grid-layout"  cellpadding="0"  cellspacing="0" >
+<tr>
+<td colspan="1"  valign="top" align="left">
+<!-- start : InputText -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+<!-- start : Label -->
+<label  id="txtUserCon_label"  for="txtUserCon"  class="label-text" >Usuario</label>
+<!-- end : Label -->
+</td>
+<td>
+<input  id="txtUserCon"  name="txtUserCon"  type="text"  value="P0010218"  class="input-disabled"  readonly="readonly"  style="width:80px" >
+
+</td>
+</tr>
+</table>
+<!-- end : InputText -->
+</td>
+<td colspan="1"  valign="top" align="left">
+<!-- start : InputText -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+<input  id="txtUserConNombre"  name="txtUserConNombre"  type="text"  value="SUNION CALDER&Oacute;N GARC&Iacute;A MORENO ABOGADOS SLP"  class="input-disabled"  readonly="readonly"  style="width:300px" >
+</td></tr>
+</table>
+<!-- end : InputText -->
+</td>
+</tr>
+</table>
+<!-- end : Grid Layout -->
+
+<!-- end : start widget code hidden render -->
+
+<!-- end : end widget code hidden render -->
+
+<div id="DatosGeneralesSectionBar" class="divSectionEmptyBarContentArea">&nbsp;</div>
+</div>
+</td>
+</tr>
+</table></div>
+<!-- end : divSectionContentArea:DatosGenerales -->
+<!-- end : Section Vertical -->
+</div>
+<div  id="sectionFormDeployed2"  class="divSectionArea"  >
+
+<!-- start : Section Vertical -->
+<div  id="Lista"  class="divSectionContentArea" >
+<!-- divSectionContentArea:Lista -->
+
+<table width="100%" cellpadding="0" cellspacing="0" class="tblSectionContentArea">
+<tr>
+<td style="vertical-align: top;" class="cellSectionHeaderArea">
+<table cellpadding="0" cellspacing="0"><tr  class="sectionTitleContent" >
+<td height="1px" align="right" style="text-align: right; cursor:pointer;"  class="sectionTitleContent" onclick="toggleContent('ListaContent', 'ListaImg', 'ListaCellContent'); ; " ><img alt="" style="border: 0px black solid" id="ListaImg" src="/drwd00/img/icoNaviNPSectionClosed2010.gif"/></td>
+<td style="padding-left:3px; cursor:pointer;" onclick="toggleContent('ListaContent', 'ListaImg', 'ListaCellContent');  ;"  class="sectionTitleContent"  title="" >LISTA</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="100%" height="100%" id="ListaCellContent"  class="cellSectionContentArea" >
+<span style="display:none; visibility:hidden;">&nbsp;</span>
+<div id="ListaContent"  class="divSectionContentBody"  style="display:block; visibility:visible;"  >
+
+<!-- start : Grid Layout -->
+<table  id="tablaLlistadades"  class="grid-layout"  cellpadding="0"  cellspacing="0" >
+<tr>
+<td colspan="1"  valign="top" align="left"><!-- start: Table -->
+<div>
+<table  id="llistadades"  class="table-widget"  cellspacing="0"  cellpadding="0" >
+<thead style="display:table-header-group;" id="llistadades_thead"  class="table-head" >
+<tr onmouseover="this.style.cursor='pointer'" class="table-head" >
+
+<th  title=""Fecha""  class="table-cell-head"  style="width:80px; "  onclick="javascript:sortWTable('llistadades', '0', '', false, 'text');" ><img src="/drwd00/img/icoNaviNPOrdenar.gif" alt="Ordenar" />Fecha</th>
+<th  class="table-cell-head"  style="width:35px; "  >Tipo</th>
+<th  title=""Modelo""  class="table-cell-head"  style="width:10px; width:70px; "  onclick="javascript:sortWTable('llistadades', '2', '', false, 'text');" ><img src="/drwd00/img/icoNaviNPOrdenar.gif" alt="Ordenar" />Modelo</th>
+<th  class="table-cell-head"  style="width:35px; "  ></th>
+<th  title="Descripcion"  class="table-cell-head"  onclick="javascript:sortWTable('llistadades', '4', '', false, 'text');" ><img src="/drwd00/img/icoNaviNPOrdenar.gif" alt="Ordenar" />Descripción</th>
+<th  class="table-cell-head"  onclick="javascript:sortWTable('llistadades', '5', '', false, '');" ><img src="/drwd00/img/icoNaviNPOrdenar.gif" alt="Ordenar" />Usuario</th></tr>
+</thead>
+<colGroup>
+<col  width="80" /><col  width="35" /><col  width="70" /><col  width="35" /><col/><col/></colGroup><tbody  id="llistadades_tbody"  class="table-body" >
+<tr  id="row_0_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_0_0"  style="width:80px; " >23/12/2021</td>
+<td  class="table-cell"  id="llistadades_0_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_0_2"  style="width:70px; width:10px" >09151</td>
+<td  class="table-cell"  id="llistadades_0_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(0,&quot;AB&quot;,&quot;972008815&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('0','972008815', this);" id="llistadades_0_4"  style="cursor:pointer;" >Perito a CTS: AsuntoSolicitud</td>
+<td  class="table-cell"  id="llistadades_0_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0011759');" >
+&nbsp;&gt;&nbsp;P0011759&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_1_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_1_0"  style="width:80px; " >22/12/2021</td>
+<td  class="table-cell"  id="llistadades_1_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_1_2"  style="width:70px; width:10px" >03206</td>
+<td  class="table-cell"  id="llistadades_1_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(1,&quot;AB&quot;,&quot;971736490&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('1','971736490', this);" id="llistadades_1_4"  style="cursor:pointer;" >Perito: Nota Prioritaria</td>
+<td  class="table-cell"  id="llistadades_1_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_2_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_2_0"  style="width:80px; " >21/12/2021</td>
+<td  class="table-cell"  id="llistadades_2_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_2_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_2_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(2,&quot;AB&quot;,&quot;971545755&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('2','971545755', this);" id="llistadades_2_4"  style="cursor:pointer;" >Informe Abogado.</td>
+<td  class="table-cell"  id="llistadades_2_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_3_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_3_0"  style="width:80px; " >20/12/2021</td>
+<td  class="table-cell"  id="llistadades_3_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_3_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_3_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(3,&quot;AB&quot;,&quot;971103227&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('3','971103227', this);" id="llistadades_3_4"  style="cursor:pointer;" >Abogado: Informe-celebrada a.previa</td>
+<td  class="table-cell"  id="llistadades_3_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_4_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_4_0"  style="width:80px; " >07/10/2021</td>
+<td  class="table-cell"  id="llistadades_4_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_4_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_4_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(4,&quot;AB&quot;,&quot;951164452&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('4','951164452', this);" id="llistadades_4_4"  style="cursor:pointer;" >Abogado: Informe-suspensi&oacute;n y nuevo se&ntilde;al</td>
+<td  class="table-cell"  id="llistadades_4_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_5_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_5_0"  style="width:80px; " >01/10/2021</td>
+<td  class="table-cell"  id="llistadades_5_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_5_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_5_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(5,&quot;AB&quot;,&quot;948341593&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('5','948341593', this);" id="llistadades_5_4"  style="cursor:pointer;" >Abogado: Informe-se&ntilde;alada a.prev.11.11.21</td>
+<td  class="table-cell"  id="llistadades_5_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_6_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_6_0"  style="width:80px; " >20/07/2021</td>
+<td  class="table-cell"  id="llistadades_6_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_6_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_6_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(6,&quot;AB&quot;,&quot;933005373&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('6','933005373', this);" id="llistadades_6_4"  style="cursor:pointer;" >Abogado: Informe</td>
+<td  class="table-cell"  id="llistadades_6_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_7_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_7_0"  style="width:80px; " >01/06/2021</td>
+<td  class="table-cell"  id="llistadades_7_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_7_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_7_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(7,&quot;AB&quot;,&quot;921195347&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('7','921195347', this);" id="llistadades_7_4"  style="cursor:pointer;" >Abogado: Informe</td>
+<td  class="table-cell"  id="llistadades_7_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_8_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_8_0"  style="width:80px; " >26/05/2021</td>
+<td  class="table-cell"  id="llistadades_8_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_8_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_8_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(8,&quot;AB&quot;,&quot;919887287&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('8','919887287', this);" id="llistadades_8_4"  style="cursor:pointer;" >Abogado: Informe</td>
+<td  class="table-cell"  id="llistadades_8_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_9_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_9_0"  style="width:80px; " >19/02/2021</td>
+<td  class="table-cell"  id="llistadades_9_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_9_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_9_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(9,&quot;AB&quot;,&quot;897373341&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('9','897373341', this);" id="llistadades_9_4"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alar aud previa</td>
+<td  class="table-cell"  id="llistadades_9_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_10_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_10_0"  style="width:80px; " >08/01/2021</td>
+<td  class="table-cell"  id="llistadades_10_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_10_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_10_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(10,&quot;AB&quot;,&quot;886284730&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('10','886284730', this);" id="llistadades_10_4"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alamiento a.prev</td>
+<td  class="table-cell"  id="llistadades_10_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_11_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_11_0"  style="width:80px; " >19/11/2020</td>
+<td  class="table-cell"  id="llistadades_11_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_11_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_11_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(11,&quot;AB&quot;,&quot;876070510&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('11','876070510', this);" id="llistadades_11_4"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alar a.previa</td>
+<td  class="table-cell"  id="llistadades_11_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_12_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_12_0"  style="width:80px; " >08/10/2020</td>
+<td  class="table-cell"  id="llistadades_12_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_12_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_12_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(12,&quot;AB&quot;,&quot;866187138&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('12','866187138', this);" id="llistadades_12_4"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alar a.previa</td>
+<td  class="table-cell"  id="llistadades_12_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_13_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_13_0"  style="width:80px; " >03/08/2020</td>
+<td  class="table-cell"  id="llistadades_13_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_13_2"  style="width:70px; width:10px" >00029</td>
+<td  class="table-cell"  id="llistadades_13_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('13','851829795', this);" id="llistadades_13_4"  style="cursor:pointer;" >libre</td>
+<td  class="table-cell"  id="llistadades_13_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_14_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_14_0"  style="width:80px; " >03/08/2020</td>
+<td  class="table-cell"  id="llistadades_14_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_14_2"  style="width:70px; width:10px" >03207</td>
+<td  class="table-cell"  id="llistadades_14_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(14,&quot;AB&quot;,&quot;851829717&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('14','851829717', this);" id="llistadades_14_4"  style="cursor:pointer;" >Abogado:</td>
+<td  class="table-cell"  id="llistadades_14_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_15_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_15_0"  style="width:80px; " >30/07/2020</td>
+<td  class="table-cell"  id="llistadades_15_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_15_2"  style="width:70px; width:10px" >00300</td>
+<td  class="table-cell"  id="llistadades_15_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('15','851264858', this);" id="llistadades_15_4"  style="cursor:pointer;" >Informe Abogado-contestaci&oacute;n demanda</td>
+<td  class="table-cell"  id="llistadades_15_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_16_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_16_0"  style="width:80px; " >28/07/2020</td>
+<td  class="table-cell"  id="llistadades_16_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_16_2"  style="width:70px; width:10px" >09127</td>
+<td  class="table-cell"  id="llistadades_16_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(16,&quot;AB&quot;,&quot;850689158&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('16','850689158', this);" id="llistadades_16_4"  style="cursor:pointer;" >Abogado: Informe-solicitud informaci&oacute;n</td>
+<td  class="table-cell"  id="llistadades_16_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  style="font-weight:bold"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0010218');" >
+&nbsp;&gt;&nbsp;P0010218&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_17_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_17_0"  style="width:80px; " >24/07/2020</td>
+<td  class="table-cell"  id="llistadades_17_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_17_2"  style="width:70px; width:10px" >09162</td>
+<td  class="table-cell"  id="llistadades_17_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(17,&quot;AB&quot;,&quot;850097286&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('17','850097286', this);" id="llistadades_17_4"  style="cursor:pointer;" >ENC. SUNION CALDER&Oacute;N GARC&Iacute;A MORENO, ABOGADOS</td>
+<td  class="table-cell"  id="llistadades_17_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_18_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_18_0"  style="width:80px; " >23/07/2020</td>
+<td  class="table-cell"  id="llistadades_18_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_18_2"  style="width:70px; width:10px" >00100</td>
+<td  class="table-cell"  id="llistadades_18_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('18','849986067', this);" id="llistadades_18_4"  style="cursor:pointer;" >Doc. Judicial</td>
+<td  class="table-cell"  id="llistadades_18_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'ORSIVFR');" >
+&nbsp;&gt;&nbsp;ORSIVFR&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_19_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_19_0"  style="width:80px; " >20/05/2020</td>
+<td  class="table-cell"  id="llistadades_19_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_19_2"  style="width:70px; width:10px" >05100</td>
+<td  class="table-cell"  id="llistadades_19_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(19,&quot;AB&quot;,&quot;834966127&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('19','834966127', this);" id="llistadades_19_4"  style="cursor:pointer;" >Cierre del siniestro</td>
+<td  class="table-cell"  id="llistadades_19_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_20_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_20_0"  style="width:80px; " >21/04/2020</td>
+<td  class="table-cell"  id="llistadades_20_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_20_2"  style="width:70px; width:10px" >09911</td>
+<td  class="table-cell"  id="llistadades_20_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(20,&quot;AB&quot;,&quot;828412986&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('20','828412986', this);" id="llistadades_20_4"  style="cursor:pointer;" >Siniestro sin movimientos desde hace 6 meses</td>
+<td  class="table-cell"  id="llistadades_20_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'SN16BO43');" >
+&nbsp;&gt;&nbsp;SN16BO43&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_21_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_21_0"  style="width:80px; " >22/10/2019</td>
+<td  class="table-cell"  id="llistadades_21_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_21_2"  style="width:70px; width:10px" >07900</td>
+<td  class="table-cell"  id="llistadades_21_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('21','785981122', this);" id="llistadades_21_4"  style="cursor:pointer;" >AUT EMAIL 20191022-16:07_316_R.C. C&iacute;a contrar</td>
+<td  class="table-cell"  id="llistadades_21_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_22_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_22_0"  style="width:80px; " >22/10/2019</td>
+<td  class="table-cell"  id="llistadades_22_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Correspondencia"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMCorreo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_22_2"  style="width:70px; width:10px" >00316</td>
+<td  class="table-cell"  id="llistadades_22_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(22,&quot;AB&quot;,&quot;785981112&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('22','785981112', this);" id="llistadades_22_4"  style="cursor:pointer;" >R.C. C&iacute;a contraria:</td>
+<td  class="table-cell"  id="llistadades_22_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_23_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_23_0"  style="width:80px; " >16/10/2019</td>
+<td  class="table-cell"  id="llistadades_23_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_23_2"  style="width:70px; width:10px" >03145</td>
+<td  class="table-cell"  id="llistadades_23_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('23','784272087', this);" id="llistadades_23_4"  style="cursor:pointer;" >S/REF. POLIZA 20412198, SINIESTRO 587568195</td>
+<td  class="table-cell"  id="llistadades_23_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'INDEML');" >
+&nbsp;&gt;&nbsp;INDEML&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_24_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_24_0"  style="width:80px; " >04/09/2019</td>
+<td  class="table-cell"  id="llistadades_24_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_24_2"  style="width:70px; width:10px" >09151</td>
+<td  class="table-cell"  id="llistadades_24_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(24,&quot;AB&quot;,&quot;774074537&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('24','774074537', this);" id="llistadades_24_4"  style="cursor:pointer;" >Perito a CTS: Asuntoimportante</td>
+<td  class="table-cell"  id="llistadades_24_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0006366');" >
+&nbsp;&gt;&nbsp;P0006366&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_25_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_25_0"  style="width:80px; " >28/08/2019</td>
+<td  class="table-cell"  id="llistadades_25_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_25_2"  style="width:70px; width:10px" >03206</td>
+<td  class="table-cell"  id="llistadades_25_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(25,&quot;AB&quot;,&quot;772770317&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('25','772770317', this);" id="llistadades_25_4"  style="cursor:pointer;" >Perito:</td>
+<td  class="table-cell"  id="llistadades_25_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_26_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_26_0"  style="width:80px; " >28/08/2019</td>
+<td  class="table-cell"  id="llistadades_26_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_26_2"  style="width:70px; width:10px" >00150</td>
+<td  class="table-cell"  id="llistadades_26_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('26','772769855', this);" id="llistadades_26_4"  style="cursor:pointer;" >SGR: Documentaci&oacute;n c&iacute;a contraria</td>
+<td  class="table-cell"  id="llistadades_26_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E006323');" >
+&nbsp;&gt;&nbsp;E006323&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_27_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_27_0"  style="width:80px; " >28/08/2019</td>
+<td  class="table-cell"  id="llistadades_27_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_27_2"  style="width:70px; width:10px" >00124</td>
+<td  class="table-cell"  id="llistadades_27_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(27,&quot;AB&quot;,&quot;772743862&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('27','772743862', this);" id="llistadades_27_4"  style="cursor:pointer;" >SGR – Recibida reclamaci&oacute;n 201990059076  2&ordm;B</td>
+<td  class="table-cell"  id="llistadades_27_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'SM01LDE');" >
+&nbsp;&gt;&nbsp;SM01LDE&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_28_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_28_0"  style="width:80px; " >14/05/2019</td>
+<td  class="table-cell"  id="llistadades_28_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_28_2"  style="width:70px; width:10px" >07900</td>
+<td  class="table-cell"  id="llistadades_28_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('28','747655580', this);" id="llistadades_28_4"  style="cursor:pointer;" >AUT EMAIL 20190514-10:36_9999_A mediador: no</td>
+<td  class="table-cell"  id="llistadades_28_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E103747');" >
+&nbsp;&gt;&nbsp;E103747&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_29_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_29_0"  style="width:80px; " >14/05/2019</td>
+<td  class="table-cell"  id="llistadades_29_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Correspondencia"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMCorreo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_29_2"  style="width:70px; width:10px" >09999</td>
+<td  class="table-cell"  id="llistadades_29_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(29,&quot;AB&quot;,&quot;747655576&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('29','747655576', this);" id="llistadades_29_4"  style="cursor:pointer;" >A mediador: no env&iacute;o AP</td>
+<td  class="table-cell"  id="llistadades_29_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E103747');" >
+&nbsp;&gt;&nbsp;E103747&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_30_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_30_0"  style="width:80px; " >13/05/2019</td>
+<td  class="table-cell"  id="llistadades_30_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_30_2"  style="width:70px; width:10px" >09156</td>
+<td  class="table-cell"  id="llistadades_30_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(30,&quot;AB&quot;,&quot;747352552&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('30','747352552', this);" id="llistadades_30_4"  style="cursor:pointer;" >Epac: Nota Manual</td>
+<td  class="table-cell"  id="llistadades_30_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'PA035700');" >
+&nbsp;&gt;&nbsp;PA035700&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_31_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_31_0"  style="width:80px; " >27/03/2019</td>
+<td  class="table-cell"  id="llistadades_31_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_31_2"  style="width:70px; width:10px" >00000</td>
+<td  class="table-cell"  id="llistadades_31_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(31,&quot;AB&quot;,&quot;735364014&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('31','735364014', this);" id="llistadades_31_4"  style="cursor:pointer;" >A la espera de reclamaci&oacute;n de c&iacute;a contraria</td>
+<td  class="table-cell"  id="llistadades_31_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E103747');" >
+&nbsp;&gt;&nbsp;E103747&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_32_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_32_0"  style="width:80px; " >27/03/2019</td>
+<td  class="table-cell"  id="llistadades_32_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_32_2"  style="width:70px; width:10px" >00000</td>
+<td  class="table-cell"  id="llistadades_32_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(32,&quot;AB&quot;,&quot;735362959&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('32','735362959', this);" id="llistadades_32_4"  style="cursor:pointer;" >*Vivienda en alquiler: origen lavavajillas*</td>
+<td  class="table-cell"  id="llistadades_32_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'E103747');" >
+&nbsp;&gt;&nbsp;E103747&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_33_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_33_0"  style="width:80px; " >28/02/2019</td>
+<td  class="table-cell"  id="llistadades_33_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Imagen"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMAnexo.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_33_2"  style="width:70px; width:10px" >07502</td>
+<td  class="table-cell"  id="llistadades_33_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="display:none; margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, '');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('33','728265321', this);" id="llistadades_33_4"  style="cursor:pointer;" >Informe Valoraci&oacute;n eDiversos</td>
+<td  class="table-cell"  id="llistadades_33_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0006366');" >
+&nbsp;&gt;&nbsp;P0006366&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_34_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_34_0"  style="width:80px; " >28/02/2019</td>
+<td  class="table-cell"  id="llistadades_34_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_34_2"  style="width:70px; width:10px" >09342</td>
+<td  class="table-cell"  id="llistadades_34_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(34,&quot;AB&quot;,&quot;728265318&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('34','728265318', this);" id="llistadades_34_4"  style="cursor:pointer;" >CIERRE ENCARGO I.:        180,00</td>
+<td  class="table-cell"  id="llistadades_34_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'IP10P500');" >
+&nbsp;&gt;&nbsp;IP10P500&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_35_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_35_0"  style="width:80px; " >28/02/2019</td>
+<td  class="table-cell"  id="llistadades_35_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_35_2"  style="width:70px; width:10px" >09341</td>
+<td  class="table-cell"  id="llistadades_35_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(35,&quot;AB&quot;,&quot;728265187&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('35','728265187', this);" id="llistadades_35_4"  style="cursor:pointer;" >AVANCE 02 ENC.: RESERVA ACTU I:        180,00</td>
+<td  class="table-cell"  id="llistadades_35_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0006366');" >
+&nbsp;&gt;&nbsp;P0006366&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_36_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_36_0"  style="width:80px; " >20/02/2019</td>
+<td  class="table-cell"  id="llistadades_36_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_36_2"  style="width:70px; width:10px" >09341</td>
+<td  class="table-cell"  id="llistadades_36_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(36,&quot;AB&quot;,&quot;725617911&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('36','725617911', this);" id="llistadades_36_4"  style="cursor:pointer;" >AVANCE 01 ENC.: RESERVA ACTU I:        300,00</td>
+<td  class="table-cell"  id="llistadades_36_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'P0006366');" >
+&nbsp;&gt;&nbsp;P0006366&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_37_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_37_0"  style="width:80px; " >18/02/2019</td>
+<td  class="table-cell"  id="llistadades_37_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Nota"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMTexto.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_37_2"  style="width:70px; width:10px" >09637</td>
+<td  class="table-cell"  id="llistadades_37_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(37,&quot;AB&quot;,&quot;724960912&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('37','724960912', this);" id="llistadades_37_4"  style="cursor:pointer;" >Alta encargo diversos 0001 a B95669941</td>
+<td  class="table-cell"  id="llistadades_37_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'PA035700');" >
+&nbsp;&gt;&nbsp;PA035700&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_38_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_38_0"  style="width:80px; " >18/02/2019</td>
+<td  class="table-cell"  id="llistadades_38_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_38_2"  style="width:70px; width:10px" >09378</td>
+<td  class="table-cell"  id="llistadades_38_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(38,&quot;AB&quot;,&quot;724960436&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('38','724960436', this);" id="llistadades_38_4"  style="cursor:pointer;" >Siniestro abierto por agente</td>
+<td  class="table-cell"  id="llistadades_38_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'PA035700');" >
+&nbsp;&gt;&nbsp;PA035700&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+<tr  id="row_39_llistadades"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadades_39_0"  style="width:80px; " >18/02/2019</td>
+<td  class="table-cell"  id="llistadades_39_1"  style="width:35px; " >
+<!-- start : IconButton -->
+<input type="text" id="null"  title="Batch"  disabled="disabled"  data-mask="mask:icon;error:false;disabled:true;" readOnly="readonly"  style="background-image:url(/drwd00/img/icoListNMLista.gif); background-repeat:no-repeat; backgound-position:center center; "  class="iconbutton-disabled"  onclick="if (this.className=='iconbutton') { ; }">
+
+<!-- end : IconButton --></td>
+<td  class="table-cell"  id="llistadades_39_2"  style="width:70px; width:10px" >00088</td>
+<td  class="table-cell"  id="llistadades_39_3"  style="width:35px; " >
+<!-- start : Anchor -->
+<div  id="div_anchorDatosNota"  class="divAnchorTransparent"  style="margin:0px 0px 0px 0px; height:18px; line-height:18px; "  >
+<img  id="anchorDatosNota"  class="image-transparent"  src="/drwd00/img/icoListNMPreview.gif" height="16"  width="16" title="" alt="" onclick="Anchor.showAnchorTextDisplay(this, 'jScript:recuperarDatos(39,&quot;AB&quot;,&quot;724960435&quot;,&quot;587568195&quot;,&quot;S&quot;,&quot;&quot;)');" >
+</div>
+
+<!-- end : Anchor -->
+</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('39','724960435', this);" id="llistadades_39_4"  style="cursor:pointer;" >Motivos No uso Asistencia:Otros</td>
+<td  class="table-cell"  id="llistadades_39_5" >
+<!-- start : Anchor -->
+<div  id="div_anchorUser"  class="divAnchorTransparent"  >
+<label  id="anchorUser"  class="labelAnchor"  title="" onclick="Anchor.showAnchorUserDisplay(this, 'SN03CO07');" >
+&nbsp;&gt;&nbsp;SN03CO07&nbsp;
+</label>
+</div>
+
+<!-- end : Anchor -->
+</td>    </tr>
+   </tbody>
+ </table>
+</div>
+<!-- end: Table -->
+
+</td>
+</tr>
+</table>
+<!-- end : Grid Layout -->
+
+<!-- end : start widget code hidden render -->
+
+<!-- end : end widget code hidden render -->
+
+<!-- start : Grid Layout -->
+<table  id="tablaLlistadadesWM"  class="grid-layout"  cellpadding="0"  cellspacing="0" >
+<tr>
+<td colspan="1"  valign="top" align="left"><!-- start: Table -->
+<div>
+<table  id="llistadadesWM"  class="table-widget"  cellspacing="0"  cellpadding="0" >
+<thead style="display:table-header-group;" id="llistadadesWM_thead"  class="table-head" >
+<tr onmouseover="this.style.cursor='pointer'" class="table-head" >
+
+<th  title=""Fecha""  class="table-cell-head"  style="width:80px; "  onclick="javascript:sortWTable('llistadadesWM', '0', '', false, 'text');" ><img src="/drwd00/img/icoNaviNPOrdenar.gif" alt="Ordenar" />Fecha</th>
+<th  title="Descripcion"  class="table-cell-head"  onclick="javascript:sortWTable('llistadadesWM', '1', '', false, 'text');" ><img src="/drwd00/img/icoNaviNPOrdenar.gif" alt="Ordenar" />Descripción</th></tr>
+</thead>
+<colGroup>
+<col  width="80" /><col/></colGroup><tbody  id="llistadadesWM_tbody"  class="table-body" >
+<tr  id="row_0_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_0_0"  style="width:80px; " >23/12/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('0','972008815', this);" id="llistadadesWM_0_1"  style="cursor:pointer;" >Perito a CTS: AsuntoSolicitud</td>    </tr>
+<tr  id="row_1_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_1_0"  style="width:80px; " >22/12/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('1','971736490', this);" id="llistadadesWM_1_1"  style="cursor:pointer;" >Perito: Nota Prioritaria</td>    </tr>
+<tr  id="row_2_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_2_0"  style="width:80px; " >21/12/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('2','971545755', this);" id="llistadadesWM_2_1"  style="cursor:pointer;" >Informe Abogado.</td>    </tr>
+<tr  id="row_3_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_3_0"  style="width:80px; " >20/12/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('3','971103227', this);" id="llistadadesWM_3_1"  style="cursor:pointer;" >Abogado: Informe-celebrada a.previa</td>    </tr>
+<tr  id="row_4_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_4_0"  style="width:80px; " >07/10/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('4','951164452', this);" id="llistadadesWM_4_1"  style="cursor:pointer;" >Abogado: Informe-suspensi&oacute;n y nuevo se&ntilde;al</td>    </tr>
+<tr  id="row_5_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_5_0"  style="width:80px; " >01/10/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('5','948341593', this);" id="llistadadesWM_5_1"  style="cursor:pointer;" >Abogado: Informe-se&ntilde;alada a.prev.11.11.21</td>    </tr>
+<tr  id="row_6_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_6_0"  style="width:80px; " >20/07/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('6','933005373', this);" id="llistadadesWM_6_1"  style="cursor:pointer;" >Abogado: Informe</td>    </tr>
+<tr  id="row_7_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_7_0"  style="width:80px; " >01/06/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('7','921195347', this);" id="llistadadesWM_7_1"  style="cursor:pointer;" >Abogado: Informe</td>    </tr>
+<tr  id="row_8_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_8_0"  style="width:80px; " >26/05/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('8','919887287', this);" id="llistadadesWM_8_1"  style="cursor:pointer;" >Abogado: Informe</td>    </tr>
+<tr  id="row_9_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_9_0"  style="width:80px; " >19/02/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('9','897373341', this);" id="llistadadesWM_9_1"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alar aud previa</td>    </tr>
+<tr  id="row_10_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_10_0"  style="width:80px; " >08/01/2021</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('10','886284730', this);" id="llistadadesWM_10_1"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alamiento a.prev</td>    </tr>
+<tr  id="row_11_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_11_0"  style="width:80px; " >19/11/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('11','876070510', this);" id="llistadadesWM_11_1"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alar a.previa</td>    </tr>
+<tr  id="row_12_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_12_0"  style="width:80px; " >08/10/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('12','866187138', this);" id="llistadadesWM_12_1"  style="cursor:pointer;" >Abogado: Informe-pend se&ntilde;alar a.previa</td>    </tr>
+<tr  id="row_13_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_13_0"  style="width:80px; " >03/08/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('13','851829795', this);" id="llistadadesWM_13_1"  style="cursor:pointer;" >libre</td>    </tr>
+<tr  id="row_14_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_14_0"  style="width:80px; " >03/08/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('14','851829717', this);" id="llistadadesWM_14_1"  style="cursor:pointer;" >Abogado:</td>    </tr>
+<tr  id="row_15_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_15_0"  style="width:80px; " >30/07/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('15','851264858', this);" id="llistadadesWM_15_1"  style="cursor:pointer;" >Informe Abogado-contestaci&oacute;n demanda</td>    </tr>
+<tr  id="row_16_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_16_0"  style="width:80px; " >28/07/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('16','850689158', this);" id="llistadadesWM_16_1"  style="cursor:pointer;" >Abogado: Informe-solicitud informaci&oacute;n</td>    </tr>
+<tr  id="row_17_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_17_0"  style="width:80px; " >24/07/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('17','850097286', this);" id="llistadadesWM_17_1"  style="cursor:pointer;" >ENC. SUNION CALDER&Oacute;N GARC&Iacute;A MORENO, ABOGADOS</td>    </tr>
+<tr  id="row_18_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_18_0"  style="width:80px; " >23/07/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('18','849986067', this);" id="llistadadesWM_18_1"  style="cursor:pointer;" >Doc. Judicial</td>    </tr>
+<tr  id="row_19_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_19_0"  style="width:80px; " >20/05/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('19','834966127', this);" id="llistadadesWM_19_1"  style="cursor:pointer;" >Cierre del siniestro</td>    </tr>
+<tr  id="row_20_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_20_0"  style="width:80px; " >21/04/2020</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('20','828412986', this);" id="llistadadesWM_20_1"  style="cursor:pointer;" >Siniestro sin movimientos desde hace 6 meses</td>    </tr>
+<tr  id="row_21_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_21_0"  style="width:80px; " >22/10/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('21','785981122', this);" id="llistadadesWM_21_1"  style="cursor:pointer;" >AUT EMAIL 20191022-16:07_316_R.C. C&iacute;a contrar</td>    </tr>
+<tr  id="row_22_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_22_0"  style="width:80px; " >22/10/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('22','785981112', this);" id="llistadadesWM_22_1"  style="cursor:pointer;" >R.C. C&iacute;a contraria:</td>    </tr>
+<tr  id="row_23_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_23_0"  style="width:80px; " >16/10/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('23','784272087', this);" id="llistadadesWM_23_1"  style="cursor:pointer;" >S/REF. POLIZA 20412198, SINIESTRO 587568195</td>    </tr>
+<tr  id="row_24_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_24_0"  style="width:80px; " >04/09/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('24','774074537', this);" id="llistadadesWM_24_1"  style="cursor:pointer;" >Perito a CTS: Asuntoimportante</td>    </tr>
+<tr  id="row_25_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_25_0"  style="width:80px; " >28/08/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('25','772770317', this);" id="llistadadesWM_25_1"  style="cursor:pointer;" >Perito:</td>    </tr>
+<tr  id="row_26_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_26_0"  style="width:80px; " >28/08/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('26','772769855', this);" id="llistadadesWM_26_1"  style="cursor:pointer;" >SGR: Documentaci&oacute;n c&iacute;a contraria</td>    </tr>
+<tr  id="row_27_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_27_0"  style="width:80px; " >28/08/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('27','772743862', this);" id="llistadadesWM_27_1"  style="cursor:pointer;" >SGR – Recibida reclamaci&oacute;n 201990059076  2&ordm;B</td>    </tr>
+<tr  id="row_28_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_28_0"  style="width:80px; " >14/05/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('28','747655580', this);" id="llistadadesWM_28_1"  style="cursor:pointer;" >AUT EMAIL 20190514-10:36_9999_A mediador: no</td>    </tr>
+<tr  id="row_29_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_29_0"  style="width:80px; " >14/05/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('29','747655576', this);" id="llistadadesWM_29_1"  style="cursor:pointer;" >A mediador: no env&iacute;o AP</td>    </tr>
+<tr  id="row_30_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_30_0"  style="width:80px; " >13/05/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('30','747352552', this);" id="llistadadesWM_30_1"  style="cursor:pointer;" >Epac: Nota Manual</td>    </tr>
+<tr  id="row_31_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_31_0"  style="width:80px; " >27/03/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('31','735364014', this);" id="llistadadesWM_31_1"  style="cursor:pointer;" >A la espera de reclamaci&oacute;n de c&iacute;a contraria</td>    </tr>
+<tr  id="row_32_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_32_0"  style="width:80px; " >27/03/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('32','735362959', this);" id="llistadadesWM_32_1"  style="cursor:pointer;" >*Vivienda en alquiler: origen lavavajillas*</td>    </tr>
+<tr  id="row_33_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_33_0"  style="width:80px; " >28/02/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('33','728265321', this);" id="llistadadesWM_33_1"  style="cursor:pointer;" >Informe Valoraci&oacute;n eDiversos</td>    </tr>
+<tr  id="row_34_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_34_0"  style="width:80px; " >28/02/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('34','728265318', this);" id="llistadadesWM_34_1"  style="cursor:pointer;" >CIERRE ENCARGO I.:        180,00</td>    </tr>
+<tr  id="row_35_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_35_0"  style="width:80px; " >28/02/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('35','728265187', this);" id="llistadadesWM_35_1"  style="cursor:pointer;" >AVANCE 02 ENC.: RESERVA ACTU I:        180,00</td>    </tr>
+<tr  id="row_36_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_36_0"  style="width:80px; " >20/02/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('36','725617911', this);" id="llistadadesWM_36_1"  style="cursor:pointer;" >AVANCE 01 ENC.: RESERVA ACTU I:        300,00</td>    </tr>
+<tr  id="row_37_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_37_0"  style="width:80px; " >18/02/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('37','724960912', this);" id="llistadadesWM_37_1"  style="cursor:pointer;" >Alta encargo diversos 0001 a B95669941</td>    </tr>
+<tr  id="row_38_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_38_0"  style="width:80px; " >18/02/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('38','724960436', this);" id="llistadadesWM_38_1"  style="cursor:pointer;" >Siniestro abierto por agente</td>    </tr>
+<tr  id="row_39_llistadadesWM"  class="table-row"  onmouseover="javascript:this.className='table-row-over'" onmouseout="javascript:this.className='table-row'">
+
+<td  class="table-cell"  id="llistadadesWM_39_0"  style="width:80px; " >18/02/2019</td>
+<td  class="table-cell"  onclick="javascript:this.style.cursor='pointer';llamadaRegistro('39','724960435', this);" id="llistadadesWM_39_1"  style="cursor:pointer;" >Motivos No uso Asistencia:Otros</td>    </tr>
+   </tbody>
+ </table>
+</div>
+<!-- end: Table -->
+
+</td>
+</tr>
+</table>
+<!-- end : Grid Layout -->
+
+<!-- end : start widget code hidden render -->
+
+<!-- end : end widget code hidden render -->
+
+<div id="ListaSectionBar">
+<!-- start : Section Button Bar -->
+<table width="100%" cellpadding="0" cellspacing="0"  class="sectionButtonBar"  >
+<tr>
+<td align="right">
+<table border="0" cellspacing="0" cellpadding="0" >
+<tr>
+<!-- start : Section Button -->
+<td>
+<div  class="sectionButtonDisabled"  title="Retroceder" data-mask="mask:SectionButton;disabled:true;typeText:false;strictWidth:false;"  onclick=" retroceder();" >
+&lt;&lt;
+</div>
+</td>
+<!-- end : Section Button -->
+<!-- start : Section Button -->
+<td>
+<div  class="sectionButtonDisabled"  title="Avanzar" data-mask="mask:SectionButton;disabled:true;typeText:false;strictWidth:false;"  onclick=" avanzar();" >
+&gt;&gt;
+</div>
+</td>
+<!-- end : Section Button -->
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- end : Section Button Bar -->
+
+</div>
+</div>
+</td>
+</tr>
+</table></div>
+<!-- end : divSectionContentArea:Lista -->
+<!-- end : Section Vertical -->
+</div>
+
+<!-- start : Code -->
+
+					<input type="hidden" name="com.ats.webbeans.struts.thread" value="e1s1"/>
+					<input type="hidden" name="com.ats.webbeans.struts.synch" value="1"/>
+					<input type="hidden" name="action" value="NAV">
+					<input type="hidden" name="view" value="">
+					<input type="hidden" name="fila" value="">
+					<input type="hidden" name="direccion" value="">
+					<input type="hidden" name="codFicha" value="">
+					<input type="hidden" name="acciones" value="">
+					<input type="hidden" name="tc20" value="">
+					<input type="hidden" name="codop" value="">
+				<!-- end : Code -->
+</div>
+
+<div style='display: none'><input type='submit'/></div>
+</form>
+<!-- end : Form -->
+
+<!-- start : Form -->
+<form  id="IndexForm"  name="IndexForm"  method="POST"  action="/drsi10/main/control.do"  >
+
+<!-- This section of code has been dinamically generated -->
+<input type="hidden" name="com.ats.webbeans.struts.thread" value="e1s1"/>
+<input type="hidden" name="com.ats.webbeans.struts.synch" value="4"/>
+<input type="hidden" name="formValidationID" value="2"/>
+
+<div style='display: none'><input type='submit'/></div>
+</form>
+<!-- end : Form -->
+
+<!-- start : Footer Button Bar -->
+<table width="100%" cellpadding="0" cellspacing="0"  class="footerButtonBar"  >
+<tr>
+<td  class="cellFooterUpperSpace" >&nbsp;</td>
+</tr>
+<tr>
+<td align="right">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+
+<!-- start : Footer Button -->
+<td>
+<div  class="footerButton"  style="display:none" data-mask="mask:FooterButton;disabled:false;typeText:false;marked:false;strictWidth:false;"  onclick=" callAppFGAngular();" >
+Nueva Ficha Gesti&oacute;n
+</div>
+</td>
+<!-- end : Footer Button -->
+
+<!-- start : Footer Button -->
+<td>
+<div  class="footerButton" data-mask="mask:FooterButton;disabled:false;typeText:false;marked:false;strictWidth:false;"  onclick=" cerrar();" >
+Cerrar
+</div>
+</td>
+<!-- end : Footer Button -->
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- end : Footer Button Bar -->
+<!-- start : Code -->
+
+		    	<script type="text/javascript" src="/drsi10/js/mainFGP.js?v=2"></script>
+		    	<script type="text/javascript">
+				
+
+				    
+				                
+					//var PAGEID='main$mainTC04';
+					var mensajeError = 'error.datos';
+					var accionAvanzar = 'A';
+					var accionRetroceder ='R';
+					var primeraBusqueda='S1';
+					var filaAnterior ='';
+					var numFilaAnterior ='';
+					var esSudAmerica = false; 	//No poner comillas, tratarla como un boolean
+					var mostrarTipoDo = false;
+					var isEpac = 'false';
+					var isExternal = false; 	//No poner comillas, tratarla como un boolean
+					//var drsi10 = "true";	//Variable necesaria para la aplicacion drsi20:para que sepa si viene de la drsi10 o no.
+					
+				    
+				    //llamada al flujo para obtener el detalle de un registro.
+				    function llamadaRegistro(fila,codFicha){
+				    
+				       	var myForm = document.getElementById("menuViewForm");
+				       	myForm.codFicha.value = codFicha;
+				       	myForm.fila.value = fila;
+				       	sendResultadosViewEvent("DETALLEREG");
+				       	//Se envia, pasa por switchMain, donde se comprueba la validez de los datos
+				       	//Y de switchmain se vuelve a menu.jsp y se pasa el HashMap con los datos para redirigir.
+					}
+
+					//Funcion que gestiona la llamada AJAX para recuperar datos para visualizar Nota (lupa de la lista resultados)
+					function recuperarDatos(fila, vista, codFicha,
+							referencia, familia, tipodo) {
+							if (fila != 'N') {
+								marcarFila(fila, 'S');
+							}
+							ajax = new AJAXService("/drsi10/jsp/datosAjax.jsp");
+						return ajax.send("&uid="+"P0010218"+ "&cia="+"2"+ "&familia="+familia + "&referencia="+referencia + "&codFicha="+codFicha + "&tipodo=" +tipodo + "&vista=" + vista);
+						
+					}
+					
+					function cerrar(){
+						var resposta = confirm('¿Está seguro que quiere cerrar la aplicación?');
+						if(resposta){
+							window.location.replace('/drsi10/SEAServlet?action=logout');
+						}
+					}
+					
+					function controlTablaWM(){
+						
+						$("#tablaLlistadadesWM").hide();
+						
+						widthScreen = $(window).width();
+						if(isWM && widthScreen<650){  //SFS-19440 display reduced table when less than 650 (at 640 two columns)
+							$("#tablaLlistadades").hide();
+							$("#tablaLlistadadesWM").show();
+						}else{
+							$("#tablaLlistadades").show();
+							$("#tablaLlistadadesWM").hide();
+						}
+						
+					}
+					
+					window.onresize= function() {			
+						controlTablaWM();
+					};
+					
+					window.onload = function(){
+						controlTablaWM();
+					
+						//Se recupera el user-agent para obtener informacion del navegador utilizado.
+						//Las aplicaciones que llamen a nuestra aplicacion tendran que discriminar segun navegador. 
+						var infoBrowse = navigator.userAgent;
+						
+						try{
+						
+							if(false){
+								//Se pone a false para no abrir ventana detalle al cargar.
+								
+								var myForm = document.getElementById("IndexForm");
+								myForm.action= '/drsi10/SEAServlet?action=redirect&parametersMapKey=detalleMap';
+								myForm.submit();
+							}
+							
+				       		//Se oculta el label que acompaña al combo tipoDoc
+				       		if(mostrarTipoDo){
+					       		document.getElementById('txtNif_lbl_IN').style.display = 'none';
+				       		}
+				       		
+				       		if(false){
+				       			document.getElementById('imgOptMenuBackHelp').style.display = 'none';
+							}
+				       	}
+				       	catch(e){}
+				       	
+				       	Page.doEPacResize();
+				    }
+					
+				</script>
+				
+				
+		    <!-- end : Code -->
+<tr>
+<td><!-- Start Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0"  id="footerTable"  class="footerTable"  >
+<tr>
+<td width="50%" align="left" ><label  class="footerLink" >Allianz 2021</label></td>
+<td width="50%" align="right" ><label  class="footerLink" onClick="location.href='#'" onMouseOver="status=''; return true;">Subir&nbsp;<img src="/drwd00/img/icoFootNaviGoTop.gif" width="12" height="12" style="vertical-align: text-bottom;" alt="Subir" /></label></td>
+</tr>
+</table>
+<!-- End Footer --></td>
+</tr>
+</table>
+</div>
+<!-- end : AppContent -->
+</div> <!-- divContainerPagFull -->
+
+</div> <!-- end : AppPage FullPage -->
+
+</body>
+
+<!-- end : Page Screen -->
+</html>
+	
