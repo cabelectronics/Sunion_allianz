@@ -1,2 +1,3 @@
 selenium
 numpy
+bs4
