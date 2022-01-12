@@ -36,5 +36,12 @@ time.sleep(5)
 PLAT_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[6]/nx-link/a')
 PLAT_element.click()
 
+time.sleep(20)
 
+SINTRO_element = driver.find_element_by_id('claimNumber.input-text')
+SINTRO_element.send_keys(SINIESTRO)
 
+ENVIAR_element = driver.find_element_by_id("0_10")
+ENVIAR_element.click()
+
+print("FINISH")
