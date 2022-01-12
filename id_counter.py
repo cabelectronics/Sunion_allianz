@@ -1,10 +1,8 @@
-
+i=0
 while(True):
-    i=0
     id='llistadades_'+ str(i) + '_3'
     try:
-         element = driver.find_element_by_id("id")
+        element = driver.find_element_by_id(str(id))
         i= i+1
     except: 
         break
-
