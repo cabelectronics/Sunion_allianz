@@ -1,20 +1,28 @@
-
 USERNAME = 'p0010218'
-PSWD = 'Anze015p'
+PSWD = 'Anze016p'
 SINIESTRO = '855230428'
 
-from selenium import webdriver
-import time
-options = webdriver.ChromeOptions()
-#options.add_argument("--headless")
 
+<<<<<<< HEAD
 driver = webdriver.Chrome(chrome_options=options)
 #driver.get('https://www.e-pacallianz.com/ngx-epac-professional/public/home')
 driver.get("https://www.e-pacallianz.com/ngx-epac-professional/private/home#:~:text=Aplic.-,Allianz,-Encargos%20Proveedores%20Allianz")
+=======
+#Interaction with GUI
+from flask import Flask, request
+from flask_cors import CORS
 
-USR_element = driver.find_element_by_name("username")
-USR_element.send_keys(USERNAME)
+#GUI Web Browser libraries
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from PyQt5.QtWebEngineWidgets import *
+>>>>>>> f63adfb5ec816c2992a5375d67c11ea029d5ccbf
 
+#Webdriver libraries for downloading necessary data from webpage
+import webdriver
+
+<<<<<<< HEAD
 PSWD_element = driver.find_element_by_name("password")
 PSWD_element.send_keys(PSWD)
 
@@ -51,3 +59,6 @@ ENVIAR_element = driver.find_element_by_id("0_10")
 ENVIAR_element.click()
 
 print("FINISH")
+=======
+webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)
+>>>>>>> f63adfb5ec816c2992a5375d67c11ea029d5ccbf
