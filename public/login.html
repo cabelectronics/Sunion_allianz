@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title> Login Page </title>
+    <style>
+        Body {
+        font-family: Calibri, Helvetica, sans-serif;
+        background-color: white;
+        }
+        form {
+        border: 3px solid #003994 ;
+        text-align: center;
+        padding: 12px 15px
+        }
+        input [type=text] [type=password] {
+            width: 75px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #436499;
+            /* border: 1px solid #6081b8; */
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #003994;
+            width: 100px;
+            color: white;
+            border: 2px;
+            cursor: pointer
+        }
+        button:hover {
+        opacity: 0.8;
+        }
+        h1 {text-align: center;}
+    </style>
+  </head>  
+  <body>
+      <h1>
+        Bienvenid@
+      </h1>
+      <form action="/action_page.php" method="get">
+        <label>Usuario : </label>
+        <br>
+        <input type="text" placeholder="Ingrese su usuario" name="usuario" required>
+        <br>
+        <label> Contraseña :</label>
+        <br>
+        <input type="password" placeholder="Ingrese su contraseña" name="contraseña" required>
+        <br>
+        <button type="submit">Iniciar Sesión</button> 
+      </form>
+    </body>
+</html>
