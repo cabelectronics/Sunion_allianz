@@ -1,5 +1,6 @@
 selenium
 numpy
+<<<<<<< HEAD
 bs4
 flask
 flask-cors
@@ -8,3 +9,6 @@ pyqt5-tools
 PyQtWebEngine
 chromedriver-autoinstaller
 webdriver-manager
+=======
+py
+>>>>>>> 4f41647e521d62c0e9518c741b4538fa28061d60
