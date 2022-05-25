@@ -1,0 +1,9 @@
+
+
+Problemas de incompatibilidad de futura revision de ChromeDriver tanto en Windows como en Mac, y diversas versiones.
+
+isFileDownload --> change name when  download finish and before starting next process
+
+Algunas veces es incapaz de encontrar MAPs en la pagina WEB
+
+Importante, el software se tiene que descargar en el disco local.(Luego si los archivos se quieres descargar en un disco externo habra que arreglar el codigo)

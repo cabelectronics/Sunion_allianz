@@ -1,7 +1,7 @@
 USERNAME = 'p0010218'
-PSWD = 'Anze016p'
-SINIESTRO = '855230428'
-
+PSWD = 'Anze019p'
+SINIESTRO1 = '855230428'
+SINIESTRO2 = '587568195'
 
 #Interaction with GUI
 from flask import Flask, request
@@ -15,5 +15,17 @@ from PyQt5.QtWebEngineWidgets import *
 
 #Webdriver libraries for downloading necessary data from webpage
 import webdriver
+
+print('Seleccione Siniestro:')
+print('1: 855230428')
+print('2: 587568195')
+siniestro_entry = input('> ')
+
+if siniestro_entry == '1':
+    SINIESTRO = SINIESTRO1
+else:
+    SINIESTRO = SINIESTRO2
+
+print('Loading...')
 
 webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)
