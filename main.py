@@ -2,6 +2,8 @@
 #PSWD = 'Anze019p'
 #SINIESTRO1 = '855230428'
 #SINIESTRO2 = '587568195'
+PATH = '/Users/cab/CAB/Sunion_allianz/pruebas_asier/destino_final'
+
 
 import os
 import sys
@@ -53,7 +55,7 @@ if __name__ == '__main__':
     browser.load(QUrl.fromLocalFile(filename))
     browser.showMaximized()
     ###################################################
-    
+
 
     #####################
     #Flask and Flask_CORS configuration
@@ -80,7 +82,7 @@ if __name__ == '__main__':
 
 
             #Webdriver 
-            webdriver.GET_DOCUMENTS(username, password, siniestro)
+            webdriver.GET_DOCUMENTS(username, password, siniestro, PATH)
             
             return 'wakamole'
 

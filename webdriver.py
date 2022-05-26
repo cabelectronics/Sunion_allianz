@@ -50,7 +50,7 @@ options.add_argument('--kiosk-printing')
 
 options.add_argument("--headless")
 
-def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO):
+def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     #driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=Options)
     driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
 
@@ -227,6 +227,9 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO):
                     pass
 
         print('Process finished')
+    #Move to destination PATH
+    print('Download Finished')
+    
         
         
     
