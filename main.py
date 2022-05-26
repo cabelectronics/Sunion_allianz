@@ -78,11 +78,17 @@ if __name__ == '__main__':
             
             username = request.form['username']
             password = request.form['password']
+            if bool(username) ==  True:
+                pass
+            #siniestro
             print('[Data received from Forms]:', username, password)
+
 
         #Webdriver 
         webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)
     
+
+
     app_.exec()
 
 sys.exit()
