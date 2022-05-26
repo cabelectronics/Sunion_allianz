@@ -1,14 +1,16 @@
-USERNAME = 'p0010218'
-PSWD = 'Anze019p'
-SINIESTRO1 = '855230428'
-SINIESTRO2 = '587568195'
+#USERNAME = 'p0010218'
+#PSWD = 'Anze019p'
+#SINIESTRO1 = '855230428'
+#SINIESTRO2 = '587568195'
 
 import os
 import sys
-
+from threading import Thread
+import json
 #Interaction with GUI
-from flask import Flask, request
+from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
+
 
 #GUI Web Browser libraries
 from PyQt5.QtGui import QIcon
@@ -20,18 +22,6 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 #Webdriver library for downloading necessary data from webpage
 import webdriver
 
-print('Seleccione Siniestro:')
-print('1: 855230428')
-print('2: 587568195')
-siniestro_entry = input('> ')
-
-if siniestro_entry == '1':
-    SINIESTRO = SINIESTRO1
-else:
-    SINIESTRO = SINIESTRO2
-
-print('Loading...')
-
 ############################################################################################################
 class Interceptor(QWebEngineUrlRequestInterceptor):
     def interceptRequest(self, info):
@@ -39,13 +29,13 @@ class Interceptor(QWebEngineUrlRequestInterceptor):
 
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 filename = os.path.join(CURRENT_DIR, "public/login.html")
-print(filename)
+
 
 ############################################################################################################
 
 if __name__ == '__main__':
 
-    #
+    #QT App Config
     app_ = QApplication(sys.argv)
 
     app_.setApplicationName("Mission Software SVP Aerospace")
@@ -62,14 +52,15 @@ if __name__ == '__main__':
     
     browser.load(QUrl.fromLocalFile(filename))
     browser.showMaximized()
-
+    ###################################################
     
+
     #####################
     #Flask and Flask_CORS configuration
     app = Flask(__name__)
     CORS(app, support_credentials=True)
 
-    @app.route('/bego', methods=["POST", "GET"])
+    @app.route('/bego', methods=['POST', 'GET'])
     def bego():
         
         #Get the login data from the HTML
@@ -78,19 +69,27 @@ if __name__ == '__main__':
             
             username = request.form['username']
             password = request.form['password']
+            siniestro = request.form['case']
+            
+            
             if bool(username) ==  True:
-                pass
-            #siniestro
-            print('[Data received from Forms]:', username, password)
-            #Tenemos ya todo
+                print('Data received')
+           
+            print('[Data received from Forms]:', username, password, siniestro, file=sys.stderr)
+            
 
 
             #Webdriver 
-            webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)
+            webdriver.GET_DOCUMENTS(username, password, siniestro)
             
+            return 'wakamole'
+
             #Si el username o password son incorrectos recibiremos un error
     
+        return 'hi'
 
+    kwargs = {'host': '127.0.0.1', 'port': 5050, 'threaded': True, 'use_reloader': False, 'debug': False}
+    flaskThread = Thread(target=app.run, daemon=True, kwargs=kwargs).start()
 
     app_.exec()
 
