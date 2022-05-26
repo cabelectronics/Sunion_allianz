@@ -81,8 +81,13 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO):
             return False
 
 
-    WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
+    a = WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
+    if a == False:
+        error = "error"
+        return error
 
+    elif a == True:
+        pass
 
     APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
     APL_ALLIANZ_element.click()

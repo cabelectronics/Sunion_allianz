@@ -82,10 +82,13 @@ if __name__ == '__main__':
                 pass
             #siniestro
             print('[Data received from Forms]:', username, password)
+            #Tenemos ya todo
 
 
-        #Webdriver 
-        webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)
+            #Webdriver 
+            webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)
+            
+            #Si el username o password son incorrectos recibiremos un error
     
 
 
