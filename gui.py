@@ -11,7 +11,7 @@ class MainWindow(QMainWindow):
         super(MainWindow,self).__init__(*args, **kwargs)
 
         self.browser = QWebEngineView()
-        self.browser.setUrl(QUrl("exampole.html"))
+        self.browser.setUrl(QUrl("public/login.html"))
 
         self.setCentralWidget(self.browser)
 

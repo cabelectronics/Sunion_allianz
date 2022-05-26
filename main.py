@@ -28,4 +28,18 @@ else:
 
 print('Loading...')
 
-webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)
+if __name__ == '__main__':
+
+    #
+    app_ = QApplication(sys.argv)
+
+    app_.setApplicationName("Qtπ")
+    app_.setOrganizationName("Base")
+    app_.setApplicationDisplayName("Qtπ - Base")
+
+    browser = QWebEngineView()
+
+    interceptor = Interceptor()
+    browser.page().profile().setUrlRequestInterceptor(interceptor)
+
+    webdriver.GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO)

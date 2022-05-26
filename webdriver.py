@@ -87,7 +87,7 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO):
     APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
     APL_ALLIANZ_element.click()
 
-    #Finding MAP sometimes gives error, that's why it's duplicated.
+    #Finding MAP sometimes gives error, that's why it's triplicated.
     print('Searching for MAP')
     WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
     WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
