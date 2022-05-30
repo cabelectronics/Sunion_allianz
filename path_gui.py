@@ -1,32 +1,21 @@
 import os
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QComboBox, QPushButton, QFileDialog, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QFileDialog
 
-class MyApp(QFileDialog):
+ 
+def dialog():
+    file = QFileDialog.getExistingDirectory()
     
-    def getDirectory(self):
-        response = QFileDialog.getExistingDirectory(
-            self,
-            caption='Select a folder',
-            directory=os.getcwd(),
-            
-        )
-        print(response)
-        return response
-
-
-if __name__ == '__main__':
+    print(file)
+ 
+if __name__ == '__main__': 
     app = QApplication(sys.argv)
     app.setStyleSheet('''
         QWidget {
             font-size: 35px;
         }
     ''')
-    
-    myApp = MyApp()
-    myApp.show()
+    win = dialog()
 
-    try:
-        sys.exit(app.exec_())
-    except SystemExit:
-        print('Closing Window...')
+    sys.exit(app.exec_())
+   
