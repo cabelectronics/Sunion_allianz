@@ -12,7 +12,7 @@ class MyApp(QFileDialog):
             
         )
         print(response)
-        return response 
+        return response
 
 
 if __name__ == '__main__':
