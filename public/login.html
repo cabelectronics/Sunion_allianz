@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/form.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <title> Login Page </title>
@@ -60,51 +61,53 @@
     
                 <div style="width: 1410px;height:870px ;border:6px solid #FFE8A4;">
                 <form class="form-inline">
-                    <h1> Welcome!</h1>
-                    <label style = "font-size: 18px;
-                    text-align: center; font-family: Didot ">Username : </label>
-                    <br>
-                    <input style= "width: 175px;
-                    height: 30px;
-                    margin-top: 18px;
-                    padding: 5px 6px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid;
-                    border-radius: 4px;
-                    box-sizing: border-box;" type="text" placeholder="Enter Username" name="username" required>
-                    <br> 
-                    <label style= "font-size: 18px;
-                    text-align: center; font-family: Didot;"> Password :</label>
-                    <br>
-                    <input style= "width: 175px;
-                    height: 30px;
-                    padding: 5px 6px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid;
-                    border-radius: 4px;
-                    box-sizing: border-box;" type="password" placeholder="Enter Password" name="password" required>
-                    <br>
-                    <label style= "font-size: 18px;
-                    text-align: center; font-family: Didot;"> Case Number :</label>
-                    <br>
-                    <input style= "width: 175px;
-                    height: 30px;
-                    padding: 5px 6px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid;
-                    border-radius: 4px;
-                    box-sizing: border-box;" type="text" placeholder="Enter Case Number" name="case" required>
+                    
+                        <h1> Welcome!</h1>
+                        <label style = "font-size: 18px;
+                        text-align: center; font-family: Didot " for="username">Username : </label>
+                        <br>
+                        <input style= "width: 175px;
+                        height: 30px;
+                        margin-top: 18px;
+                        padding: 5px 6px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid;
+                        border-radius: 4px;
+                        box-sizing: border-box;" type="text" placeholder="Enter Username" name="username" id="name" required>
+                        <br> 
+                        <label style= "font-size: 18px;
+                        text-align: center; font-family: Didot;" for="password"> Password :</label>
+                        <br>
+                        <input style= "width: 175px;
+                        height: 30px;
+                        padding: 5px 6px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid;
+                        border-radius: 4px;
+                        box-sizing: border-box;" type="password" placeholder="Enter Password" name="password" id="password" required>
+                        <br>
+                        <label style= "font-size: 18px;
+                        text-align: center; font-family: Didot;" for="case"> Case Number :</label>
+                        <br>
+                        <input style= "width: 175px;
+                        height: 30px;
+                        padding: 5px 6px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid;
+                        border-radius: 4px;
+                        box-sizing: border-box;" type="text" placeholder="Enter Case Number" name="case" id="case" required>
 
-                    <br><br>
-                    <button style= "border-radius:2px;" type="submit" name="login">Login</button> 
-                     
+                        <br><br>
+                        <button style= "border-radius:2px;" type="submit" class="btn btn-default">Login</button> 
+                        
                 </form>
                 </div>
 
         </div>
+        
         <div class="background">
             
             <style>
