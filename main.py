@@ -1,8 +1,8 @@
 #USERNAME = 'p0010218'
-#PSWD = 'Anze019p'
+#PSWD = 'Anze020p'
 #SINIESTRO1 = '855230428'
 #SINIESTRO2 = '587568195'
-PATH = '/Users/cab/CAB/Sunion_allianz/pruebas_asier/destino_final'
+
 
 
 import os
@@ -20,6 +20,11 @@ from PyQt5.QtCore import QUrl
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWebEngineCore import QWebEngineUrlRequestInterceptor
 from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtWidgets import QFileDialog
+
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+import path_gui
 
 #Webdriver library for downloading necessary data from webpage
 import webdriver
@@ -55,7 +60,14 @@ if __name__ == '__main__':
     browser.load(QUrl.fromLocalFile(filename))
     browser.showMaximized()
     ###################################################
-
+    #define File Dialog
+    
+    def dialog():
+        file = QFileDialog.getExistingDirectory()
+    
+        print(file)
+ 
+    
 
     #####################
     #Flask and Flask_CORS configuration
@@ -80,9 +92,15 @@ if __name__ == '__main__':
             print('[Data received from Forms]:', username, password, siniestro, file=sys.stderr)
             
 
+            #Open file Dialog
+            os.system('python3 path_gui.py')
+
+            file_path = open('path.txt', 'r')
+            path = file_path.read()
+            
 
             #Webdriver 
-            webdriver.GET_DOCUMENTS(username, password, siniestro, PATH)
+            webdriver.GET_DOCUMENTS(username, password, siniestro, path)
             
             return 'wakamole'
 

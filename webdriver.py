@@ -228,6 +228,13 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
 
         print('Process finished')
     #Move to destination PATH
+    source_dir = 'download_2'
+    target_dir = str(PATH)
+        
+    file_names = os.listdir(source_dir)
+        
+    for file_name in file_names:
+        shutil.move(os.path.join(source_dir, file_name), target_dir)
     print('Download Finished')
     
         
