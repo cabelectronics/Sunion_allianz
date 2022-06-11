@@ -20,6 +20,8 @@ from PyQt5.QtCore import QUrl
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWebEngineCore import QWebEngineUrlRequestInterceptor
 from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtWidgets import QApplication, QFileDialog
+
 
 #Webdriver library for downloading necessary data from webpage
 import webdriver
@@ -80,6 +82,21 @@ if __name__ == '__main__':
             print('[Data received from Forms]:', username, password, siniestro, file=sys.stderr)
             
 
+        def dialog():
+        file = QFileDialog.getExistingDirectory()
+    
+        print(file)
+ 
+        if __name__ == '__main__': 
+            app__ = QApplication(sys.argv)
+            app__.setStyleSheet('''
+            QWidget {
+            font-size: 35px;
+             }
+             ''')
+            win = dialog()
+
+            sys.exit(app__.exec_())
 
             #Webdriver 
             webdriver.GET_DOCUMENTS(username, password, siniestro, PATH)
