@@ -8,9 +8,8 @@
 import os
 import sys
 from threading import Thread
-import json
 #Interaction with GUI
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request
 from flask_cors import CORS
 
 
@@ -20,11 +19,9 @@ from PyQt5.QtCore import QUrl
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWebEngineCore import QWebEngineUrlRequestInterceptor
 from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.QtWidgets import QFileDialog
 
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
-import path_gui
 
 #Webdriver library for downloading necessary data from webpage
 import webdriver
@@ -45,11 +42,11 @@ if __name__ == '__main__':
     #QT App Config
     app_ = QApplication(sys.argv)
 
-    app_.setApplicationName("Mission Software SVP Aerospace")
-    app_.setOrganizationName("SVP Aerospace")
-    app_.setApplicationDisplayName("Mission Software SVP Aerospace")
+    app_.setApplicationName("QTπ - Base")
+    app_.setOrganizationName("QTπ - Base")
+    app_.setApplicationDisplayName("QTπ - Base")
     
-    app_.setWindowIcon(QIcon("public/images/items/svp_logo.png"))
+    #app_.setWindowIcon(QIcon("public/images/items/base_logo.png"))
     
     browser = QWebEngineView()
 
@@ -60,15 +57,7 @@ if __name__ == '__main__':
     browser.load(QUrl.fromLocalFile(filename))
     browser.showMaximized()
     ###################################################
-    #define File Dialog
     
-    def dialog():
-        file = QFileDialog.getExistingDirectory()
-    
-        print(file)
- 
-    
-
     #####################
     #Flask and Flask_CORS configuration
     app = Flask(__name__)
@@ -93,14 +82,22 @@ if __name__ == '__main__':
             
 
             #Open file Dialog
+            
             os.system('python3 path_gui.py')
+           
+            os.system('python path_gui.py')
 
             file_path = open('path.txt', 'r')
             path = file_path.read()
             
+            #Your download is starting dialog
+            os.system('python3 UIs/downloading.py')
+            os.system('python UIs/downloading.py')
 
             #Webdriver 
             webdriver.GET_DOCUMENTS(username, password, siniestro, path)
+
+            
             
             return 'wakamole'
 

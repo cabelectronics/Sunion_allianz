@@ -1,18 +1,15 @@
 #Work with web Pages & SELENIUM
-from threading import current_thread
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
 import time
 import json
-import sys
 import os
 import shutil
-import glob
 import base64
+from pathlib import Path
 from webdriver_manager.chrome import ChromeDriverManager
 
 #NEW NEW Chrome settings
@@ -83,12 +80,13 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
 
     a = WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
     if a == False:
-        error = "error"
-        return error
+        #Invalid credentials
+        os.system('python3 UIs/invalid.py')
+        os.system('python UIs/invalid.py')
 
     elif a == True:
         pass
-
+    
     APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
     APL_ALLIANZ_element.click()
 
@@ -215,27 +213,48 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
             os.rename('download_2/fichero.PDF', new_file_name_pdf)
             print('Renaming PDF file...')
         except:
+            
             try:
                 os.rename('download_2/fichero.EML', new_file_name_eml)
                 print('Renaming EML file...')
             except:
+                
                 try:
-                    os.rename('download_2/ficher.HTML', new_file_name_html)
+                    os.rename('download_2/fichero.HTML', new_file_name_html)
                     print('Renaming HTML file...')
                 except:
                     print('Format not COMPATIBLE')
                     pass
 
         print('Process finished')
+
+        #get current directory and select target directory
+        cwd = os.getcwd()
+
+        src_path = str(cwd) + '/download_2'
+        trg_path = str(PATH)
+
+        for src_file in Path(src_path).glob('*.*'):
+            shutil.copy(src_file, trg_path)
+
+        #Delete content of download_2
+        folder = src_path
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print('Failed to delete %s. Reason: %s' % (file_path, e))
     #Move to destination PATH
-    source_dir = 'download_2'
-    target_dir = str(PATH)
-        
-    file_names = os.listdir(source_dir)
-        
-    for file_name in file_names:
-        shutil.move(os.path.join(source_dir, file_name), target_dir)
-    print('Download Finished')
+
+    #Download Completed msg
+    os.system('python3 UIs/finished.py')
+    os.system('python UIs/finished.py')
+    
+   
     
         
         
