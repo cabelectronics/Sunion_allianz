@@ -7,12 +7,17 @@
 
 import os
 import subprocess
+
+#subprocess.call('netstat -ano | findstr :5029', creationflags=0x08000000)
+
+
 import sys
 from threading import Thread
 #Interaction with GUI
 from flask import Flask, request
 from flask_cors import CORS
 
+import requests
 
 #GUI Web Browser libraries
 from PyQt5.QtGui import QIcon
@@ -26,6 +31,7 @@ from PyQt5.QtCore import *
 
 #Webdriver library for downloading necessary data from webpage
 import webdriver
+import random
 
 ############################################################################################################
 class Interceptor(QWebEngineUrlRequestInterceptor):
@@ -37,6 +43,45 @@ filename = os.path.join(CURRENT_DIR, "public/login.html")
 
 
 ############################################################################################################
+PORT_NUMBER = random.randint(1000, 6000)
+print(PORT_NUMBER)
+new_form = '''
+console.log('[System] Forms works!')
+$(document).ready(function() 
+{
+    $('form').on('submit', function(event)
+    {
+        $.ajax
+        (
+            {
+                data : 
+                {
+                    
+                    //username : $('#username').val(),
+                    //username : ('hello')
+                    username : $('input[name="username"').val(),
+                    password : $('input[name="password"').val(),
+                    case : $('input[name="case"').val()
+                    
+                },
+                
+                type : 'POST',
+                url: 'http:192.168.1.76:'''+str(PORT_NUMBER)+'''/bego',
+            }
+        );
+        console.log('Send succesfully')
+
+        event.preventDefault();
+
+    });
+});
+'''
+
+form_file = open('public/js/form.js', 'w')
+form_file.write(new_form)
+form_file.close()
+
+
 
 if __name__ == '__main__':
 
@@ -79,36 +124,25 @@ if __name__ == '__main__':
             if bool(username) ==  True:
                 print('Data received')
            
-            print('[Data received from Forms]:', username, password, siniestro, file=sys.stderr)
+            #print('[Data received from Forms]:', username, password, siniestro, file=sys.stderr)
             
 
             #Open file Dialog
             
-<<<<<<< HEAD
             #os.system('python3 path_gui.py')
             #os.system('python path_gui.py')
-            subprocess.call('python3 path_gui.py', creationflags=0x08000000)
+            #subprocess.call('python3 path_gui.py', creationflags=0x08000000)
             subprocess.call('python path_gui.py', creationflags=0x08000000)
-=======
-            os.system('python3 path_gui.py')
-           
-            os.system('python path_gui.py')
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 
             file_path = open('path.txt', 'r')
             path = file_path.read()
             
             #Your download is starting dialog
-<<<<<<< HEAD
             #os.system('python3 UIs/downloading.py')
             #os.system('python UIs/downloading.py')
-            subprocess.call('python3 UIs/downloading.py', creationflags=0x08000000)
+            #subprocess.call('python3 UIs/downloading.py', creationflags=0x08000000)
             subprocess.call('python UIs/downloading.py', creationflags=0x08000000)
 	        
-=======
-            os.system('python3 UIs/downloading.py')
-            os.system('python UIs/downloading.py')
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 
             #Webdriver 
             webdriver.GET_DOCUMENTS(username, password, siniestro, path)
@@ -121,9 +155,10 @@ if __name__ == '__main__':
     
         return 'hi'
 
-    kwargs = {'host': '127.0.0.1', 'port': 5050, 'threaded': True, 'use_reloader': False, 'debug': False}
+    kwargs = {'host': '0.0.0.0', 'port': int(PORT_NUMBER), 'threaded': True, 'use_reloader': False, 'debug': False}
     flaskThread = Thread(target=app.run, daemon=True, kwargs=kwargs).start()
 
     app_.exec()
+
 
 sys.exit()
