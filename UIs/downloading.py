@@ -13,12 +13,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+<<<<<<< HEAD
         MainWindow.setObjectName("QTπ - Base")
         MainWindow.resize(350, 103)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(44, 30, 300, 30))
+=======
+        MainWindow.setObjectName("QTpi - Base")
+        MainWindow.resize(258, 103)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(44, 30, 171, 16))
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -34,8 +43,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
+<<<<<<< HEAD
         MainWindow.setWindowTitle(_translate("QTpi - Base", "QTπ - Base"))
         self.label.setText(_translate("QTpi - Base", "   Your download is starting..."))
+=======
+        MainWindow.setWindowTitle(_translate("QTpi - Base", "QTpi - Base"))
+        self.label.setText(_translate("QTpi - Base", "Your download is starting..."))
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 
 
 if __name__ == "__main__":

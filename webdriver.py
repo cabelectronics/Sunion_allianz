@@ -4,16 +4,22 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+<<<<<<< HEAD
 from selenium.webdriver.chrome.service import Service
 from subprocess import CREATE_NO_WINDOW
 import subprocess
+=======
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 import time
 import json
 import os
 import shutil
 import base64
+<<<<<<< HEAD
 #import random
 import glob
+=======
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 from pathlib import Path
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -89,10 +95,15 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     a = WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
     if a == False:
         #Invalid credentials
+<<<<<<< HEAD
         #os.system('python3 UIs/invalid.py')
         #os.system('python UIs/invalid.py')
         subprocess.call('python3 UIs/invalid.py', creationflags=0x08000000)
         subprocess.call('python3 UIs/invalid.py', creationflags=0x08000000)
+=======
+        os.system('python3 UIs/invalid.py')
+        os.system('python UIs/invalid.py')
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 
     elif a == True:
         pass
@@ -228,6 +239,7 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
             os.rename('download_2/' + glob.glob("*.pdf"), new_file_name_pdf)
             print('Renaming PDF file...')
         except:
+<<<<<<< HEAD
             pass
         try:
             os.rename('download_2/' + glob.glob("*.eml"), new_file_name_eml)
@@ -240,6 +252,20 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
         except:
                 print('Format not COMPATIBLE')
                 pass
+=======
+            
+            try:
+                os.rename('download_2/fichero.EML', new_file_name_eml)
+                print('Renaming EML file...')
+            except:
+                
+                try:
+                    os.rename('download_2/fichero.HTML', new_file_name_html)
+                    print('Renaming HTML file...')
+                except:
+                    print('Format not COMPATIBLE')
+                    pass
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 
         print('Process finished')
 
@@ -266,10 +292,15 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     #Move to destination PATH
 
     #Download Completed msg
+<<<<<<< HEAD
     #os.system('python3 UIs/finished.py')
     #os.system('python UIs/finished.py')
     subprocess.call('python3 UIs/finished.py', creationflags=0x08000000)
     subprocess.call('python UIs/finished.py', creationflags=0x08000000)
+=======
+    os.system('python3 UIs/finished.py')
+    os.system('python UIs/finished.py')
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
     
    
     

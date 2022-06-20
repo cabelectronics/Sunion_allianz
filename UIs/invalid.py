@@ -13,8 +13,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+<<<<<<< HEAD
         MainWindow.setObjectName("QTπ - Base")
         MainWindow.resize(100, 95)
+=======
+        MainWindow.setObjectName("QTpi - Base")
+        MainWindow.resize(168, 95)
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -34,7 +39,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
+<<<<<<< HEAD
         MainWindow.setWindowTitle(_translate("QTpi - Base", "QTπ - Base"))
+=======
+        MainWindow.setWindowTitle(_translate("QTpi - Base", "QTpi - Base"))
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
         self.label.setText(_translate("QTpi - Base", "Invalid credentials!"))
 
 

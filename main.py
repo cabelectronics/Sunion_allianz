@@ -84,20 +84,31 @@ if __name__ == '__main__':
 
             #Open file Dialog
             
+<<<<<<< HEAD
             #os.system('python3 path_gui.py')
             #os.system('python path_gui.py')
             subprocess.call('python3 path_gui.py', creationflags=0x08000000)
             subprocess.call('python path_gui.py', creationflags=0x08000000)
+=======
+            os.system('python3 path_gui.py')
+           
+            os.system('python path_gui.py')
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 
             file_path = open('path.txt', 'r')
             path = file_path.read()
             
             #Your download is starting dialog
+<<<<<<< HEAD
             #os.system('python3 UIs/downloading.py')
             #os.system('python UIs/downloading.py')
             subprocess.call('python3 UIs/downloading.py', creationflags=0x08000000)
             subprocess.call('python UIs/downloading.py', creationflags=0x08000000)
 	        
+=======
+            os.system('python3 UIs/downloading.py')
+            os.system('python UIs/downloading.py')
+>>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 
             #Webdriver 
             webdriver.GET_DOCUMENTS(username, password, siniestro, path)
