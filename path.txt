@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 //scgm1/zdatos/ESCANER/NAGORE/EXPEDIENTES PARA ABRIR/VSS 9 JUNIO/622057544 BIO Pedro
-=======
-/Users/cab/Music/pruebas_asier/1
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
