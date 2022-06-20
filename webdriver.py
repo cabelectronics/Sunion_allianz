@@ -4,22 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-<<<<<<< HEAD
 from selenium.webdriver.chrome.service import Service
 from subprocess import CREATE_NO_WINDOW
 import subprocess
-=======
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 import time
 import json
 import os
 import shutil
 import base64
-<<<<<<< HEAD
-#import random
-import glob
-=======
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
 from pathlib import Path
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -33,8 +25,11 @@ options.add_argument("--disable-extensions")
 options.add_argument('--disable-dev-shm-usage')    
 options.add_argument("--disable-gpu")
 options.add_argument('--disable-software-rasterizer')
-
 options.add_argument("--disable-notifications")
+options.add_argument("--safebrowsing-disable-download-protection")
+options.add_argument("disable-infobars")
+options.add_argument("--safebrowsing-disable-extension-blacklist")
+
 
 #Save Webpage as HTML
 settings = {
@@ -46,12 +41,22 @@ settings = {
         "selectedDestinationId": "Save as PDF",
         "version": 2
     }
-prefs = {'printing.print_preview_sticky_settings.appState': json.dumps(settings),
-            "download.default_directory": "downloads",
-            "download.prompt_for_download": False,
-            "download.directory_upgrade": True,
-            "safebrowsing_for_trusted_sources_enabled": False,
-            "safebrowsing.enabled": False}
+
+dwn_path = os.getcwd()
+dwn_path = dwn_path + '\downloads'
+print(dwn_path)
+
+prefs = {   
+            "safebrowsing.enabled": True,
+            'printing.print_preview_sticky_settings.appState': json.dumps(settings),
+            "download.default_directory": dwn_path,
+            "download.prompt_for_download": True,
+            'download.extensions_to_open': 'eml',
+            
+
+            #"safebrowsing_for_trusted_sources_enabled": False,
+            
+        }
 #prefs = {'printing.print_preview_sticky_settings.appState': json.dumps(settings), "download.default_directory":"C:\Tutorial\down"}
 options.add_experimental_option('prefs', prefs)
 options.add_argument('--kiosk-printing')
@@ -92,29 +97,28 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
             return False
 
 
-    a = WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
-    if a == False:
-        #Invalid credentials
-<<<<<<< HEAD
-        #os.system('python3 UIs/invalid.py')
-        #os.system('python UIs/invalid.py')
-        subprocess.call('python3 UIs/invalid.py', creationflags=0x08000000)
-        subprocess.call('python3 UIs/invalid.py', creationflags=0x08000000)
-=======
-        os.system('python3 UIs/invalid.py')
-        os.system('python UIs/invalid.py')
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
-
-    elif a == True:
-        pass
     
-    APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
-    APL_ALLIANZ_element.click()
+    try:
+        WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
+        APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
+        APL_ALLIANZ_element.click()
+    except:
+        subprocess.call('python UIs/invalid.py', creationflags=0x08000000)
 
     #Finding MAP sometimes gives error, that's why it's triplicated.
     print('Searching for MAP')
     WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
-    WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
+    #WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
+    #WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
+    MAP_SEARCH = WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
+    if MAP_SEARCH == False:
+        print('MAP not found Reloading page')
+        driver.refresh()
+    else:
+        print('Map not found') #Display alert to user
+        
+   
+    
     WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a")
     print('MAP Founded')
     
@@ -185,10 +189,24 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
 
         DOCUMENT_NAME = a_element.text
         print('Document Name:', DOCUMENT_NAME)
-        a_element.click()
+        #a_element.click()
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, str(id)))).click()
         try:
             b_element = driver.find_element_by_id(str(id))
             b_element.click()
+            
+            print("DOUBLE CLICKED")
+            try:
+                b_element = driver.find_element_by_id(str(id))
+                b_element.click()
+                print("triple clicked")
+            except:
+                try:
+                    b_element = driver.find_element_by_id(str(id))
+                    b_element.click()
+                    print("Cuatriple clicked")
+                except:
+                    pass
         except:
             pass
         
@@ -213,15 +231,10 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
             
         #time.sleep(3)
         #driver.back()
-
-        ##########################################################################
-        #Move within folders
         driver.execute_script("window.history.go(-1)")
         
         
         time.sleep(3)
-
-        
         source_dir = 'downloads'
         target_dir = 'download_2'
             
@@ -236,23 +249,9 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
         new_file_name_eml = 'download_2/Fichero_' + str(i) + '.EML'
         new_file_name_html = 'download_2/Fichero_' + str(i) + '.HTML'
         try:
-            os.rename('download_2/' + glob.glob("*.pdf"), new_file_name_pdf)
+            os.rename('download_2/fichero.PDF', new_file_name_pdf)
             print('Renaming PDF file...')
         except:
-<<<<<<< HEAD
-            pass
-        try:
-            os.rename('download_2/' + glob.glob("*.eml"), new_file_name_eml)
-            print('Renaming EML file...')
-        except:
-            pass
-        try:
-            os.rename('download_2/' + glob.glob("*.html"), new_file_name_html)
-            print('Renaming HTML file...')
-        except:
-                print('Format not COMPATIBLE')
-                pass
-=======
             
             try:
                 os.rename('download_2/fichero.EML', new_file_name_eml)
@@ -263,9 +262,8 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
                     os.rename('download_2/fichero.HTML', new_file_name_html)
                     print('Renaming HTML file...')
                 except:
-                    print('Format not COMPATIBLE')
-                    pass
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
+                        print('Format not COMPATIBLE')
+                        pass
 
         print('Process finished')
 
@@ -292,15 +290,10 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     #Move to destination PATH
 
     #Download Completed msg
-<<<<<<< HEAD
     #os.system('python3 UIs/finished.py')
     #os.system('python UIs/finished.py')
-    subprocess.call('python3 UIs/finished.py', creationflags=0x08000000)
+    #subprocess.call('python3 UIs/finished.py', creationflags=0x08000000)
     subprocess.call('python UIs/finished.py', creationflags=0x08000000)
-=======
-    os.system('python3 UIs/finished.py')
-    os.system('python UIs/finished.py')
->>>>>>> ca39e9fcffd0480749ce495ca4b6ba6810ae02e1
     
    
     
@@ -316,5 +309,3 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     #Descarga automatica de ficheros
     #archivo_random_element = driver.find_element_by_id('row_0_llistadades')
     #archivo_random_element.click()
-
-    
