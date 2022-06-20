@@ -1,18 +1,20 @@
 #Work with web Pages & SELENIUM
-from threading import current_thread
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service
+from subprocess import CREATE_NO_WINDOW
+import subprocess
 import time
 import json
-import sys
 import os
 import shutil
-import glob
 import base64
+#import random
+import glob
+from pathlib import Path
 from webdriver_manager.chrome import ChromeDriverManager
 
 #NEW NEW Chrome settings
@@ -52,7 +54,10 @@ options.add_argument("--headless")
 
 def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     #driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=Options)
-    driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+    service = Service(ChromeDriverManager().install())
+    service.creationflags = CREATE_NO_WINDOW
+
+    driver = webdriver.Chrome(service=service,options=options)
 
     driver.get('https://www.e-pacallianz.com/ngx-epac-professional/public/home')
     #driver.fullscreen_window()
@@ -83,12 +88,15 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
 
     a = WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
     if a == False:
-        error = "error"
-        return error
+        #Invalid credentials
+        #os.system('python3 UIs/invalid.py')
+        #os.system('python UIs/invalid.py')
+        subprocess.call('python3 UIs/invalid.py', creationflags=0x08000000)
+        subprocess.call('python3 UIs/invalid.py', creationflags=0x08000000)
 
     elif a == True:
         pass
-
+    
     APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
     APL_ALLIANZ_element.click()
 
@@ -194,10 +202,15 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
             
         #time.sleep(3)
         #driver.back()
+
+        ##########################################################################
+        #Move within folders
         driver.execute_script("window.history.go(-1)")
         
         
         time.sleep(3)
+
+        
         source_dir = 'downloads'
         target_dir = 'download_2'
             
@@ -212,30 +225,53 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
         new_file_name_eml = 'download_2/Fichero_' + str(i) + '.EML'
         new_file_name_html = 'download_2/Fichero_' + str(i) + '.HTML'
         try:
-            os.rename('download_2/fichero.PDF', new_file_name_pdf)
+            os.rename('download_2/' + glob.glob("*.pdf"), new_file_name_pdf)
             print('Renaming PDF file...')
         except:
-            try:
-                os.rename('download_2/fichero.EML', new_file_name_eml)
-                print('Renaming EML file...')
-            except:
-                try:
-                    os.rename('download_2/ficher.HTML', new_file_name_html)
-                    print('Renaming HTML file...')
-                except:
-                    print('Format not COMPATIBLE')
-                    pass
+            pass
+        try:
+            os.rename('download_2/' + glob.glob("*.eml"), new_file_name_eml)
+            print('Renaming EML file...')
+        except:
+            pass
+        try:
+            os.rename('download_2/' + glob.glob("*.html"), new_file_name_html)
+            print('Renaming HTML file...')
+        except:
+                print('Format not COMPATIBLE')
+                pass
 
         print('Process finished')
+
+        #get current directory and select target directory
+        cwd = os.getcwd()
+
+        src_path = str(cwd) + '/download_2'
+        trg_path = str(PATH)
+
+        for src_file in Path(src_path).glob('*.*'):
+            shutil.copy(src_file, trg_path)
+
+        #Delete content of download_2
+        folder = src_path
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print('Failed to delete %s. Reason: %s' % (file_path, e))
     #Move to destination PATH
-    source_dir = 'download_2'
-    target_dir = str(PATH)
-        
-    file_names = os.listdir(source_dir)
-        
-    for file_name in file_names:
-        shutil.move(os.path.join(source_dir, file_name), target_dir)
-    print('Download Finished')
+
+    #Download Completed msg
+    #os.system('python3 UIs/finished.py')
+    #os.system('python UIs/finished.py')
+    subprocess.call('python3 UIs/finished.py', creationflags=0x08000000)
+    subprocess.call('python UIs/finished.py', creationflags=0x08000000)
+    
+   
     
         
         
