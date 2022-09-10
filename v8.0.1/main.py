@@ -7,6 +7,7 @@
 
 import os
 import subprocess
+import socket
 
 #subprocess.call('netstat -ano | findstr :5029', creationflags=0x08000000)
 
@@ -33,6 +34,8 @@ from PyQt5.QtCore import *
 import webdriver
 import random
 
+
+
 ############################################################################################################
 class Interceptor(QWebEngineUrlRequestInterceptor):
     def interceptRequest(self, info):
@@ -45,6 +48,12 @@ filename = os.path.join(CURRENT_DIR, "public/login.html")
 ############################################################################################################
 PORT_NUMBER = random.randint(1000, 6000)
 print(PORT_NUMBER)
+#Get client local IP address
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("8.8.8.8", 80))
+print(s.getsockname()[0])
+local_ip=s.getsockname()[0]
+
 new_form = '''
 console.log('[System] Forms works!')
 $(document).ready(function() 
@@ -66,7 +75,7 @@ $(document).ready(function()
                 },
                 
                 type : 'POST',
-                url: 'http:192.168.1.76:'''+str(PORT_NUMBER)+'''/bego',
+                url: 'http:'''+str(local_ip)+''':'''+str(PORT_NUMBER)+'''/bego',
             }
         );
         console.log('Send succesfully')
@@ -132,16 +141,16 @@ if __name__ == '__main__':
             #os.system('python3 path_gui.py')
             #os.system('python path_gui.py')
             #subprocess.call('python3 path_gui.py', creationflags=0x08000000)
-            subprocess.call('python path_gui.py', creationflags=0x08000000)
+            subprocess.call('UIs/path_gui/dist/path_gui/path_gui.exe', creationflags=0x08000000)
 
-            file_path = open('path.txt', 'r')
+            file_path = open('UIs/path_gui/dist/path_gui/path.txt', 'r')
             path = file_path.read()
             
             #Your download is starting dialog
             #os.system('python3 UIs/downloading.py')
             #os.system('python UIs/downloading.py')
             #subprocess.call('python3 UIs/downloading.py', creationflags=0x08000000)
-            subprocess.call('python UIs/downloading.py', creationflags=0x08000000)
+            subprocess.call('UIs/Downloading/dist/downloading/downloading.exe', creationflags=0x08000000)
 	        
 
             #Webdriver 

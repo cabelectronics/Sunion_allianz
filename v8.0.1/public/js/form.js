@@ -1,3 +1,4 @@
+
 console.log('[System] Forms works!')
 $(document).ready(function() 
 {
@@ -18,7 +19,7 @@ $(document).ready(function()
                 },
                 
                 type : 'POST',
-                url: 'http:127.0.0.1:5050/bego',
+                url: 'http:192.168.0.95:4371/bego',
             }
         );
         console.log('Send succesfully')

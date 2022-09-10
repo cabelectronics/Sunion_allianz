@@ -10,10 +10,12 @@ import subprocess
 import time
 import json
 import os
+import sys
 import shutil
 import base64
 from pathlib import Path
 from webdriver_manager.chrome import ChromeDriverManager
+import glob
 
 #NEW NEW Chrome settings
 options = Options()
@@ -103,7 +105,7 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
         APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
         APL_ALLIANZ_element.click()
     except:
-        subprocess.call('python UIs/invalid.py', creationflags=0x08000000)
+        subprocess.call('UIs/Invalid/dist/invalid/invalid.exe', creationflags=0x08000000)
 
     #Finding MAP sometimes gives error, that's why it's triplicated.
     print('Searching for MAP')
@@ -169,131 +171,252 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
         driver.switch_to.window(driver.window_handles[1])
         print("not switched")
 
+    ###################################################################################
+    #Clean /downloads folder just in case previous download didn't finish
+    #Delete content of downloads
+
+    #get current directory and select target directory
+    downloads_cwd = os.getcwd()
+
+    src_path = str(downloads_cwd) + '/downloads'
+    
+
+    folder = src_path
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path, e))
+    ###################################################################################
+    ###################################################################################
+    #Clean /download_2 folder just in case previous download didn't finish
+    #Delete content of downloads
+
+    #get current directory and select target directory
+    download_2_cwd = os.getcwd()
+
+    src_path = str(download_2_cwd) + '/download_2'
+    
+
+    folder = src_path
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path, e))
+    ###################################################################################
+
+
     #Already Switched
     ##################################
-    i=-1
     
-    
+    LLISTADADES_NUMBER = -1
+    LLISTADADES_TOTAL_NUMBER = -1
     while True:
-        i = i + 1
-        id = 'row_'+ str(i) +'_llistadades'
-        #llistadadesWM_1_0
-        print(str(id))
-        
-        DOCUMENT_ELEMENTS = WaitUntilFind(By.ID, str(id))
-        if DOCUMENT_ELEMENTS == False:
-            print('Proccess Finished')
-            break
-        a_element = driver.find_element_by_id(str(id))
         
 
-        DOCUMENT_NAME = a_element.text
-        print('Document Name:', DOCUMENT_NAME)
-        #a_element.click()
-        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, str(id)))).click()
-        try:
-            b_element = driver.find_element_by_id(str(id))
-            b_element.click()
+        LLISTADADES_NUMBER = LLISTADADES_NUMBER + 1
+        LLISTADADES_TOTAL_NUMBER = LLISTADADES_TOTAL_NUMBER + 1
+        print('LLISTADADES_NUMBER:' + str(LLISTADADES_NUMBER))
+        print('LLISTADADES_TOTAL_NUMBER:' + str(LLISTADADES_TOTAL_NUMBER))
+        #id = 'row_'+ str(i) +'_llistadades'
+        id = 'llistadades_' + str(LLISTADADES_NUMBER) + '_4'
+        
+        DOCUMENT_ELEMENTS = WaitUntilFind(By.ID, str(id))
+       
+               
+        if DOCUMENT_ELEMENTS == False:
+            print('No more documents in these page found')
+            #Esto quiere decir que no hay mas documentos en esta pagina
+            #Buscamos a ver si hay otra pagina
+            NEW_PAGE = WaitUntilFind(By.XPATH, '//*[@id="o_4" and @class="sectionButton"]')
             
-            print("DOUBLE CLICKED")
+            if NEW_PAGE == True:
+                try:
+                    PAGE_TO_CHANGE = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="o_4" and @class="sectionButton"]')))
+                    PAGE_TO_CHANGE = driver.find_element_by_xpath('//*[@id="o_4" and @class="sectionButton"]')
+                    PAGE_TO_CHANGE.click()
+                    try:
+                        PAGE_TO_CHANGE = driver.find_element_by_xpath('//*[@id="o_4" and @class="sectionButton"]')
+                        PAGE_TO_CHANGE.click()
+                    except:
+                        pass
+                    #PAGE_TO_CHANGE.click()
+                    LLISTADADES_NUMBER = -1
+                    LLISTADADES_TOTAL_NUMBER = LLISTADADES_TOTAL_NUMBER -1
+                    print('DOWNLOAD Page Changed')
+                    continue
+                except:
+                    print('UNABLE TO CHANGE DOWNLOAD PAGE')
+                
+            elif NEW_PAGE == False:
+                break
+
+
+
+        else:
+            #Replace INAVILD Windows/Linux/MAC OS ASCII characters for folders and files
+            INVALID_id_name = driver.find_element_by_id(id).text
+            id_name = str(INVALID_id_name).replace(':', '')
+            id_name = str(id_name).replace('<', '')
+            id_name = str(id_name).replace('/', '')
+            id_name = str(id_name).replace('>', '')
+            id_name = str(id_name).replace('"', '')
+            id_name = str(id_name).replace("'\'", '')
+            id_name = str(id_name).replace('|', '')
+            id_name = str(id_name).replace('?', '')
+            id_name = str(id_name).replace('*', '')
+            id_name = id_name + '_' + str(LLISTADADES_TOTAL_NUMBER)
+            print(id_name)
+
+
+            WaitUntilFind(By.ID, str(id))
+            #a_element.click()
+            WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, str(id)))).click()
+            #A veces no hace click en el a la primera, por eso lo intentamos varias veces
             try:
                 b_element = driver.find_element_by_id(str(id))
                 b_element.click()
-                print("triple clicked")
-            except:
+                
+                print("DOUBLE CLICKED")
                 try:
                     b_element = driver.find_element_by_id(str(id))
                     b_element.click()
-                    print("Cuatriple clicked")
+                    print("triple clicked")
                 except:
-                    pass
-        except:
-            pass
-        
-        #Si no es un autodescargable y ahi que descargarlo como PDF:
-            
-        if WaitUntilFind(By.XPATH, '//*[@id="sectionVariable"]/table/tbody/tr[1]/td/table/tbody/tr/td[2]') ==  True:
-            print('Trying to save as PDF')
-            #driver.execute_script("window.print();")
-            pdf = driver.execute_cdp_cmd("Page.printToPDF", {
-            "printBackground": True
-            })
-
+                    try:
+                        b_element = driver.find_element_by_id(str(id))
+                        b_element.click()
+                        print("Cuatriple clicked")
+                    except:
+                        pass
+            except:
+                pass
             
 
-            with open("downloads/fichero.pdf", "wb") as f:
-                f.write(base64.b64decode(pdf['data']))
+            #Si no es un autodescargable y ahi que descargarlo como PDF:    
+            if WaitUntilFind(By.XPATH, '//*[@id="sectionVariable"]/table/tbody/tr[1]/td/table/tbody/tr/td[2]') ==  True:
+                print('Trying to save as PDF')
+                #driver.execute_script("window.print();")
+                pdf = driver.execute_cdp_cmd("Page.printToPDF", {
+                "printBackground": True
+                })
 
-        else:
-            print('Second type download not founded')
-            pass
+                
+
+                with open("downloads/" + str(id_name) + ".pdf", "wb") as f:
+                    f.write(base64.b64decode(pdf['data']))
+                
+
+            else:
+                print('Es autodescargable')
+                pass
+               
+            
+            #Selenium goes back again to the page off all files so to select a new one when the loop starts again
+            driver.execute_script("window.history.go(-1)")
             
             
-        #time.sleep(3)
-        #driver.back()
-        driver.execute_script("window.history.go(-1)")
-        
-        
-        time.sleep(3)
-        source_dir = 'downloads'
-        target_dir = 'download_2'
+            time.sleep(3)
+
+            #Check if download is complete and if not give it more time to download so to don't have .crdownload files
             
-        file_names = os.listdir(source_dir)
-        print(file_names)
-        for file_name in file_names:
-            shutil.move(os.path.join(source_dir, file_name), target_dir)
+            cwd = os.getcwd()
+            src_path_downloads = str(cwd) + '/downloads'
+            for file in os.listdir(src_path_downloads):
+                if file.endswith(".crdownload"):
+                    print('file still downloading')
+                    time.sleep(10)
+                    log = open('log.txt', 'w')
+                    log.write('File still downloading..')
+
         
-        #Rename file in the new directory
-        
-        new_file_name_pdf = 'download_2/Fichero_' + str(i) + '.PDF'
-        new_file_name_eml = 'download_2/Fichero_' + str(i) + '.EML'
-        new_file_name_html = 'download_2/Fichero_' + str(i) + '.HTML'
-        try:
-            os.rename('download_2/fichero.PDF', new_file_name_pdf)
-            print('Renaming PDF file...')
-        except:
             
+            src_path_download_2 = str(cwd) + '/download_2'
+            for file in os.listdir(src_path_download_2):
+                if file.endswith(".crdownload"):
+                    print('file still downloading')
+                    time.sleep(10)
+                    log = open('log.txt', 'w')
+                    log.write('File still downloading..')
+                    
+
+            source_dir = 'downloads'
+            target_dir = 'download_2'
+           
+            file_names = os.listdir(source_dir)
+            print(file_names)
+            for file_name in file_names:
+                shutil.move(os.path.join(source_dir, file_name), target_dir)
+            
+            #Rename file in the new directory
+            
+            new_file_name_pdf = 'download_2/'+ str(id_name) + '.PDF'
+            new_file_name_eml = 'download_2/' + str(id_name) + '.EML'
+            new_file_name_html = 'download_2/'+ str(id_name) + '.HTML'
+            new_file_name_msg = 'download_2/' + str(id_name) + '.MSG'
+            new_file_name_docx = 'download_2/' + str(id_name) + '.DOCX'
             try:
-                os.rename('download_2/fichero.EML', new_file_name_eml)
-                print('Renaming EML file...')
+                os.rename('download_2/fichero.PDF', new_file_name_pdf)
+                print('Renaming PDF file...')
             except:
                 
                 try:
-                    os.rename('download_2/fichero.HTML', new_file_name_html)
-                    print('Renaming HTML file...')
+                    os.rename('download_2/fichero.EML', new_file_name_eml)
+                    print('Renaming EML file...')
                 except:
-                        print('Format not COMPATIBLE')
-                        pass
+                    
+                    try:
+                        os.rename('download_2/fichero.HTML', new_file_name_html)
+                        print('Renaming HTML file...')
+                    except:
+                        try:
+                            os.rename('download_2/fichero.MSG', new_file_name_msg)
+                            print('Renaming MSG file...')
+                        except:
+                            try:
+                                os.rename('download_2/fichero.DOCX', new_file_name_docx)
+                                print('Renaming DOCX file...')
+                            except:
+                                pass
 
-        print('Process finished')
+            print('Process finished')
 
-        #get current directory and select target directory
-        cwd = os.getcwd()
+            #get current directory and select target directory
+            cwd = os.getcwd()
 
-        src_path = str(cwd) + '/download_2'
-        trg_path = str(PATH)
+            src_path = str(cwd) + '/download_2'
+            trg_path = str(PATH)
 
-        for src_file in Path(src_path).glob('*.*'):
-            shutil.copy(src_file, trg_path)
+            for src_file in Path(src_path).glob('*.*'):
+                shutil.copy(src_file, trg_path)
 
-        #Delete content of download_2
-        folder = src_path
-        for filename in os.listdir(folder):
-            file_path = os.path.join(folder, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-            except Exception as e:
-                print('Failed to delete %s. Reason: %s' % (file_path, e))
-    #Move to destination PATH
+            #Delete content of download_2
+            folder = src_path
+            for filename in os.listdir(folder):
+                file_path = os.path.join(folder, filename)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                except Exception as e:
+                    print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+    
 
     #Download Completed msg
-    #os.system('python3 UIs/finished.py')
-    #os.system('python UIs/finished.py')
-    #subprocess.call('python3 UIs/finished.py', creationflags=0x08000000)
-    subprocess.call('python UIs/finished.py', creationflags=0x08000000)
+
+    subprocess.call('UIs/Finished/dist/finished/finished.exe', creationflags=0x08000000)
+    
     
    
     
@@ -309,3 +432,5 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     #Descarga automatica de ficheros
     #archivo_random_element = driver.find_element_by_id('row_0_llistadades')
     #archivo_random_element.click()
+
+    
