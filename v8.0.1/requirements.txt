@@ -1,0 +1,11 @@
+selenium
+numpy
+bs4
+flask
+flask-cors
+pyqt5
+pyqt5-tools
+PyQtWebEngine
+chromedriver-autoinstaller
+webdriver-manager
+pathlib
