@@ -16,8 +16,8 @@ with sock,sock.makefile('rb') as clientfile:
         filename = raw.strip().decode()
         length = int(clientfile.readline())
         print(f'Downloading {filename}...\n  Expecting {length:,} bytes...',end='',flush=True)
-
-        path = os.path.join('client',filename)
+        current_path = os.getcwd()
+        path = os.path.join(current_path,filename)
         os.makedirs(os.path.dirname(path),exist_ok=True)
 
         # Read the data in chunks so it can handle large files.
