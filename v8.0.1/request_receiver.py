@@ -2,6 +2,7 @@ from re import sub
 import socket
 import subprocess
 import os
+import sys
 
 # Create a UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -31,7 +32,7 @@ try:
 
         os.system('python '+ str(path)+'/send_receiver.py')
         
-
+        os.execl(sys.executable, sys.executable, *sys.argv)
     elif data == b'0000000080':
         print('Correct Version')
         #sock.shutdown()
@@ -45,4 +46,5 @@ except:
 print('closing sockett')
 
 sock.close()
-#Restart program
+sys.exit()
+

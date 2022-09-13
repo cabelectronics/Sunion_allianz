@@ -1,4 +1,5 @@
 #Work with web Pages & SELENIUM
+#HELOOOO
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -76,13 +77,15 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     #driver.fullscreen_window()
     
 
-    USR_element = driver.find_element_by_name("username")
+    #USR_element = driver.find_element_by_name("username")
+    USR_element = driver.find_element(By.NAME, "username")
     USR_element.send_keys(USERNAME)
 
-    PSWD_element = driver.find_element_by_name("password")
+    #PSWD_element = driver.find_element_by_name("password")
+    PSWD_element = driver.find_element(By.NAME, "password")
     PSWD_element.send_keys(PSWD)
 
-    LGIN_element = driver.find_element_by_xpath("/html/body/div/div/app-root/app-public/app-public-home/div/div/div/app-login/div/form/div[2]/div/button")
+    LGIN_element = driver.find_element(By.XPATH,"/html/body/div/div/app-root/app-public/app-public-home/div/div/div/app-login/div/form/div[2]/div/button")
     LGIN_element.click()
 
     #if gets error --> send gui error with credentials
@@ -102,7 +105,7 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     
     try:
         WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link")
-        APL_ALLIANZ_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
+        APL_ALLIANZ_element = driver.find_element(By.XPATH, '/html/body/div/div/app-root/app-private/app-private-footer/app-footer/footer/nx-footer-navigation/nx-footer-link/app-link')
         APL_ALLIANZ_element.click()
     except:
         subprocess.call('UIs/Invalid/dist/invalid/invalid.exe', creationflags=0x08000000)
@@ -125,35 +128,35 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
     print('MAP Founded')
     
 
-    MAP_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a')
+    MAP_element = driver.find_element(By.XPATH, '/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[2]/a')
     MAP_element.click()
 
     WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[6]/nx-link/a")
 
 
-    PLAT_element = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[6]/nx-link/a')
+    PLAT_element = driver.find_element(By.XPATH,'/html/body/div/div/app-root/app-private/app-site-map/div[2]/div[3]/div/mat-tree/mat-tree-node[6]/nx-link/a')
     PLAT_element.click()
 
     WaitUntilFind(By.XPATH, "/html/body/div/div/app-root/app-private/app-application-launch/div[2]/app-iframe-application/div/iframe")
    
     #SINIESTRO FRAME
-    iframe = driver.find_element_by_xpath('/html/body/div/div/app-root/app-private/app-application-launch/div[2]/app-iframe-application/div/iframe')
+    iframe = driver.find_element(By.XPATH,'/html/body/div/div/app-root/app-private/app-application-launch/div[2]/app-iframe-application/div/iframe')
     driver.switch_to.frame(iframe)
-    SINIESTRO_ENTRY_element = driver.find_element_by_id('claimNumber')
+    SINIESTRO_ENTRY_element = driver.find_element(By.ID,'claimNumber')
     SINIESTRO_ENTRY_element.click()
     
     SINIESTRO_ENTRY_element.send_keys(SINIESTRO)
-    ENVIAR_element = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/table/tbody/tr[1]/td/form[1]/div[1]/div/table/tbody/tr[2]/td/div/div/table/tbody/tr/td/table/tbody/tr/td[2]/div')
+    ENVIAR_element = driver.find_element(By.XPATH,'/html/body/div[1]/div[2]/div/table/tbody/tr[1]/td/form[1]/div[1]/div/table/tbody/tr[2]/td/div/div/table/tbody/tr/td/table/tbody/tr/td[2]/div')
     ENVIAR_element.click()
 
     WaitUntilFind(By.ID, "ordersList_0_0")
 
-    ESTADO_element = driver.find_element_by_id("ordersList_0_0")
+    ESTADO_element = driver.find_element(By.ID,"ordersList_0_0")
     ESTADO_element.click()
 
     WaitUntilFind(By.XPATH, '//*[@id="FG"]/div[1]')
 
-    FICHAGESTION_element = driver.find_element_by_xpath('//*[@id="FG"]/div[1]')
+    FICHAGESTION_element = driver.find_element(By.XPATH,'//*[@id="FG"]/div[1]')
     FICHAGESTION_element.click()
     
     ##################################
@@ -242,10 +245,10 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
             if NEW_PAGE == True:
                 try:
                     PAGE_TO_CHANGE = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="o_4" and @class="sectionButton"]')))
-                    PAGE_TO_CHANGE = driver.find_element_by_xpath('//*[@id="o_4" and @class="sectionButton"]')
+                    PAGE_TO_CHANGE = driver.find_element(By.XPATH,'//*[@id="o_4" and @class="sectionButton"]')
                     PAGE_TO_CHANGE.click()
                     try:
-                        PAGE_TO_CHANGE = driver.find_element_by_xpath('//*[@id="o_4" and @class="sectionButton"]')
+                        PAGE_TO_CHANGE = driver.find_element(By.XPATH,'//*[@id="o_4" and @class="sectionButton"]')
                         PAGE_TO_CHANGE.click()
                     except:
                         pass
