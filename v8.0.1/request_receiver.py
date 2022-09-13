@@ -16,7 +16,7 @@ try:
 
     # Send data
     print('sending {!r}'.format(CLIENT_VERSION))
-    sent = sock.sendto(CLIENT_VERSION, server_address)
+    sent = sock.sendto(CLIENT_VERSION.encode('utf-8'), server_address)
 
     # Receive response
     print('waiting to receive')
@@ -34,12 +34,15 @@ try:
 
     elif data == b'0000000080':
         print('Correct Version')
-        sock.shutdown()
+        #sock.shutdown()
 
+        subprocess.call('python main.py')
         #Start main.exe
+except:
+    print('Unable to connect to server')
 
-finally:
     
-    print('closing sockett')
-    sock.close()
-    #Restart program
+print('closing sockett')
+
+sock.close()
+#Restart program

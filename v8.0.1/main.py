@@ -41,10 +41,10 @@ class Interceptor(QWebEngineUrlRequestInterceptor):
     def interceptRequest(self, info):
         info.setHttpHeader(b"Accept-Language", b"en-US,en;q=0.9,es;q=0.8,de;q=0.7")
 
-CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
-filename = os.path.join(CURRENT_DIR, "public/login.html")
-
-
+CURRENT_DIR = os.getcwd()
+#filename = os.path.join(CURRENT_DIR, "public/login.html")
+filename = str(CURRENT_DIR + "\public\login.html")
+print(filename)
 ############################################################################################################
 PORT_NUMBER = random.randint(1000, 6000)
 print(PORT_NUMBER)
