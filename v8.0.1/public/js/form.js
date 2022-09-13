@@ -19,10 +19,12 @@ $(document).ready(function()
                 },
                 
                 type : 'POST',
-                url: 'http:192.168.0.95:3039/bego',
+                url: 'http:192.168.1.186:4003/bego',
             }
         );
         console.log('Send succesfully')
+
         event.preventDefault();
+
     });
 });

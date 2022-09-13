@@ -1,4 +1,4 @@
-import socket
+from socket import *
 import os
 
 CHUNKSIZE = 1_000_000
