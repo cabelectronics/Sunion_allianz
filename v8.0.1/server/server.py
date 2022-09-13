@@ -14,7 +14,7 @@ SEPARATOR = "<SEPARATOR>"
 BUFFER_SIZE = 4096
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(('127.0.0.1', 1204))
+sock.bind(('127.0.0.1', 8804))
 sock.listen()
 
 while True:
