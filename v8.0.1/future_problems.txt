@@ -1,4 +1,0 @@
-
-Convertir los programas del server a exe. 
--Request receiver tiene q ser lo primero en iniciares.
--Request receiver necesita una gui para q el usuario sepa q se esta actualizando
