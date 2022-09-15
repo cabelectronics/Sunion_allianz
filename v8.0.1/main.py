@@ -143,7 +143,7 @@ if __name__ == '__main__':
             #subprocess.call('python3 path_gui.py', creationflags=0x08000000)
             subprocess.call('UIs/path_gui/dist/path_gui/path_gui.exe', creationflags=0x08000000)
 
-            file_path = open('UIs/path_gui/dist/path_gui/path.txt', 'r')
+            file_path = open('path.txt', 'r')
             path = file_path.read()
             
             #Your download is starting dialog
