@@ -18,11 +18,11 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(44, 30, 300, 30))
+        self.label.setGeometry(QtCore.QRect(44, 30, 400, 30))
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 258, 24))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 400, 24))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("QTpi - Base", "QTπ - Base"))
-        self.label.setText(_translate("QTpi - Base", "New Version found, Updating...(don't close window)"))
+        self.label.setText(_translate("QTpi - Base", "New Version found, Updating...(Close this window)"))
 
 
 if __name__ == "__main__":

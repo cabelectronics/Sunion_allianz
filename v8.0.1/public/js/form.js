@@ -19,7 +19,7 @@ $(document).ready(function()
                 },
                 
                 type : 'POST',
-                url: 'http:192.168.0.95:4371/bego',
+                url: 'http:192.168.1.186:2081/bego',
             }
         );
         console.log('Send succesfully')
