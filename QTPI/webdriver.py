@@ -234,13 +234,12 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
         
         time.sleep(3)
         VER_MAS_element = driver.find_element(By.XPATH,'/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button')
-        
-        try:
+        VER_MAS1_element =  WaitUntilFind(By.XPATH, "/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button")
+        while VER_MAS1_element == True:
             VER_MAS_element.click()
             VER_MAS_element = driver.find_element(By.XPATH,'/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button')
-        except:
-            pass
-
+            VER_MAS1_element =  WaitUntilFind(By.XPATH, "/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button")
+               
         print('LLISTADADES_NUMBER:' + str(LLISTADADES_NUMBER))
         print('LLISTADADES_TOTAL_NUMBER:' + str(LLISTADADES_TOTAL_NUMBER))
         #id = 'row_'+ str(i) +'_llistadades'
