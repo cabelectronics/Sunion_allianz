@@ -244,7 +244,17 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
                     VER_MAS_element = driver.find_element(By.XPATH,'/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button')
                     VER_MAS_element.click()
                 except:
-                    pass
+                    try:
+                        time.sleep(3)
+                        VER_MAS_element = driver.find_element(By.XPATH,'/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button')
+                        VER_MAS_element.click()
+                    except:
+                        try:
+                            time.sleep(3)
+                            VER_MAS_element = driver.find_element(By.XPATH,'/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button')
+                            VER_MAS_element.click()
+                        except:
+                            pass
 
             VER_MAS1_element =  WaitUntilFind(By.XPATH, "/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button")
 
