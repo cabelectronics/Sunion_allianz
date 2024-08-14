@@ -246,9 +246,8 @@ def GET_DOCUMENTS(USERNAME, PSWD, SINIESTRO, PATH):
                 except:
                     pass
 
-              VER_MAS1_element =  WaitUntilFind(By.XPATH, "/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button")
-app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button")
-               
+            VER_MAS1_element =  WaitUntilFind(By.XPATH, "/html/body/div[1]/div/app-root/file-management/app-listfilemanagement/div/div/div[1]/app-ngx-load-more/div/div/div/button")
+
         print('LLISTADADES_NUMBER:' + str(LLISTADADES_NUMBER))
         print('LLISTADADES_TOTAL_NUMBER:' + str(LLISTADADES_TOTAL_NUMBER))
         #id = 'row_'+ str(i) +'_llistadades'
